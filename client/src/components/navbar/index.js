@@ -12,7 +12,6 @@ function Navbar() {
             style={{ height: "60px", width: "auto" }}
           />
         </a>
-
         {/* Navbar toggle button for mobile */}
         <button
           className="navbar-toggler"
@@ -30,13 +29,13 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link active" href="#">
-                Home
+              <a className="nav-link active btn btn-pink" href="#">
+                Log in
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                About
+              <a className="nav-link btn btn-singup" href="#">
+                Sign up
               </a>
             </li>
             <li className="nav-item">

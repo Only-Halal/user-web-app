@@ -43,8 +43,60 @@ function SearchPage() {
         <div className="container ">
           <h2 className="my-5"> Enjoy discounts on your first order </h2>
         </div>
-
         <div className="container-fluid prepare-food-img"></div>
+      </div>
+      {/* find in cities divs */}
+      <div className="container">
+        <div className="find-in-cities">
+          <h2 className="py-5"> Find us in these cities and many more! </h2>
+          <div className="row">
+            <div className="col-lg-3 col-md-3 col-12">
+              <a className="navbar-brand" href="#">
+                <img src="/lahore.jpg" alt="Logo" className="img-fluid" />
+              </a>
+            </div>
+            <div className="col-lg-3 col-md-3 col-12">
+              <a className="navbar-brand" href="#">
+                <img src="/karachi.jpg" alt="Logo" className="img-fluid" />
+              </a>
+            </div>
+            <div className="col-lg-3 col-md-3 col-12">
+              <a className="navbar-brand" href="#">
+                <img src="/azad-kashmir.jpg" alt="Logo" className="img-fluid" />
+              </a>
+            </div>
+            <div className="col-lg-3 col-md-3 col-12 mb-5">
+              <a className="navbar-brand" href="#">
+                <img src="/islamabad.jpg" alt="Logo" className="img-fluid" />
+              </a>
+            </div>
+          </div>
+        </div>
+        {/* second row start */}
+        <div className="find-in-cities ">
+          <div className="row">
+            <div className="col-lg-3 col-md-3 col-12">
+              <a className="navbar-brand" href="#">
+                <img src="/lahore.jpg" alt="Logo" className="img-fluid" />
+              </a>
+            </div>
+            <div className="col-lg-3 col-md-3 col-12">
+              <a className="navbar-brand" href="#">
+                <img src="/karachi.jpg" alt="Logo" className="img-fluid" />
+              </a>
+            </div>
+            <div className="col-lg-3 col-md-3 col-12">
+              <a className="navbar-brand" href="#">
+                <img src="/azad-kashmir.jpg" alt="Logo" className="img-fluid" />
+              </a>
+            </div>
+            <div className="col-lg-3 col-md-3 col-12 mb-5">
+              <a className="navbar-brand" href="#">
+                <img src="/islamabad.jpg" alt="Logo" className="img-fluid" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

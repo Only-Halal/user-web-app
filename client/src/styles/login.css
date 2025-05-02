@@ -45,3 +45,23 @@ input::placeholder {
 .btn-signup:hover {
   background-color: #f8bbd0;
 }
+
+/* login  */
+/* log in button  */
+.login-btn {
+  border: #999 solid 1px !important;
+}
+
+.login-btn:hover {
+  background-color: #d81b60; /* Darker pink for hover effect */
+  border-color: #d81b60;
+}
+/* signup  in button  */
+.btn-singup {
+  background-color: #d81b60 !important;
+}
+
+.btn-singup:hover {
+  background-color: #d81b60 !important; /* Darker pink for hover effect */
+  border-color: #d81b60 !important;
+}

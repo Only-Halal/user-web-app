@@ -20,7 +20,6 @@ function LoginPage() {
         style={{ maxWidth: "400px", width: "100%", padding: "20px" }}
       >
         <h2 className="text-center mb-4">Foodpanda</h2>
-
         {/* Login form */}
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -37,7 +36,6 @@ function LoginPage() {
               required
             />
           </div>
-
           <div className="mb-3">
             <label htmlFor="password" className="form-label">
               Password

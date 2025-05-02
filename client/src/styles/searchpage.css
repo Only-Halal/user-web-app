@@ -36,7 +36,7 @@
   content: "";
 }
 /* prepare image food div */
-.fire-div {
+.fire-div h2 {
   font-family: "Georgia", serif;
   font-weight: 900;
   font-size: 32px;
@@ -48,4 +48,19 @@
   background-position: center;
   height: 450px;
   display: flex;
+}
+
+/* find cities div */
+.find-in-cities {
+  background-color: "#F0F2F2";
+}
+
+.find-in-cities h2 {
+  font-family: "Georgia", serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 42px;
+}
+.find-in-cities img {
+  border-radius: 50px 20px;
 }
