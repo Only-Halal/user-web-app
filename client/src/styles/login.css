@@ -1,0 +1,47 @@
+/* App.css or any custom CSS file */
+.btn-pink {
+  background-color: #e91e63; /* Pink color */
+  border-color: #e91e63;
+}
+
+.btn-pink:hover {
+  background-color: #d81b60; /* Darker pink for hover effect */
+  border-color: #d81b60;
+}
+.form-control {
+  /* background-color: #ffffff;  */
+  padding: 5px 10px; /* Add some padding around the label */
+  border-radius: 5px; /* Optional: rounded corners */
+  color: #000; /* Text color */
+}
+
+/* App.css or any custom CSS file */
+
+.form-control {
+  border-color: #f8bbd0; /* Light pink border for form controls */
+}
+
+.form-control:focus {
+  border-color: #e91e63; /* Pink border when the input field is focused */
+  box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.25); /* Pink glow effect */
+}
+
+.btn-pink {
+  background-color: #e91e63; /* Pink background */
+  border-color: #e91e63; /* Pink border */
+}
+
+.btn-pink:hover {
+  background-color: #d81b60;
+  border-color: #d81b60;
+}
+
+input::placeholder {
+  color: #e91e63; /* Pink placeholder text */
+}
+.btn-signup {
+  border-color: #f8bbd0; /* Light pink border for form controls */
+}
+.btn-signup:hover {
+  background-color: #f8bbd0;
+}

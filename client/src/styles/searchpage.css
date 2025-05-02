@@ -1,0 +1,51 @@
+.banner {
+  height: auto;
+}
+
+.banner-img {
+  background-image: url("../../public/search-banner.webp");
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  display: flex;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.input-text:focus {
+  box-shadow: 0px 0px 0px;
+  border-color: #f8c146;
+  outline: 0px;
+}
+
+.form-control {
+  border: 1px solid #f8c146;
+}
+
+/* listing css of home and destination  */
+
+.banner-div .listing .list-inline-item::after {
+  content: ">";
+  padding: 0 0.5rem;
+  color: #999;
+}
+
+.banner-div .listing .list-inline-item:last-child::after {
+  content: "";
+}
+/* prepare image food div */
+.fire-div {
+  font-family: "Georgia", serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 42px;
+}
+.prepare-food-img {
+  background-image: url("../../public/coockingwithfire.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  display: flex;
+}
