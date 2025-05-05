@@ -1,9 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Oswald:wght@200..700&display=swap");
+
 .banner {
   height: auto;
 }
 
 .banner-img {
-  background-image: url("../../public/search-banner.webp");
+  background-image: url("../../public/banner-right-img.avif");
   background-size: cover;
   background-position: center;
   height: 450px;
@@ -20,9 +26,10 @@
   outline: 0px;
 }
 
-.form-control {
-  border: 1px solid #f8c146;
-}
+/* .form-control {
+  /* border: 1px solid #f8c146; 
+ }
+  */
 
 /* listing css of home and destination  */
 
@@ -35,12 +42,16 @@
 .banner-div .listing .list-inline-item:last-child::after {
   content: "";
 }
+.left-banner {
+  background-image: url("../../public/leftbanner.jpg");
+  background-size: cover;
+  background-position: center;
+}
 /* prepare image food div */
 .fire-div h2 {
-  font-family: "Georgia", serif;
-  font-weight: 900;
-  font-size: 32px;
-  line-height: 42px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 .prepare-food-img {
   background-image: url("../../public/coockingwithfire.jpg");
@@ -56,11 +67,21 @@
 }
 
 .find-in-cities h2 {
-  font-family: "Georgia", serif;
-  font-weight: 900;
-  font-size: 32px;
-  line-height: 42px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-.find-in-cities img {
-  border-radius: 50px 20px;
+.img-container {
+  position: inherit;
+  overflow: hidden;
+}
+.img-container img {
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: auto;
+}
+
+.img-container:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
 }

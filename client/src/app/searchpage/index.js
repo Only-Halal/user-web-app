@@ -10,9 +10,9 @@ function SearchPage() {
         className="container-fluid banner"
         style={{ backgroundColor: "#F0F2F2" }}
       >
-        <div className="container banner-div">
+        <div className="banner-div">
           <div className="row">
-            <div className="col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center">
+            <div className="col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center left-banner">
               <div className="text-w-searchbar">
                 <h4> Enjoy discounts on your first order</h4>
 
@@ -39,35 +39,52 @@ function SearchPage() {
           </div>
         </div>
       </div>
-      <div className="fire-div">
+      {/* fire div start */}
+      <div className="fire-div" style={{ backgroundColor: "#FFEEB896" }}>
         <div className="container ">
-          <h2 className="my-5"> Enjoy discounts on your first order </h2>
+          <h2> Enjoy discounts on your first order </h2>
         </div>
         <div className="container-fluid prepare-food-img"></div>
       </div>
       {/* find in cities divs */}
       <div className="container">
         <div className="find-in-cities">
-          <h2 className="py-5"> Find us in these cities and many more! </h2>
+          <h2 className="py-3"> Find us in these cities and many more! </h2>
           <div className="row">
             <div className="col-lg-3 col-md-3 col-12">
-              <a className="navbar-brand" href="#">
-                <img src="/lahore.jpg" alt="Logo" className="img-fluid" />
+              <a href="#">
+                <img
+                  src="/lahore.jpg"
+                  alt="Logo"
+                  class="img-fluid rounded-5 shadow"
+                />
               </a>
             </div>
             <div className="col-lg-3 col-md-3 col-12">
-              <a className="navbar-brand" href="#">
-                <img src="/karachi.jpg" alt="Logo" className="img-fluid" />
+              <a href="#">
+                <img
+                  src="/karachi.jpg"
+                  alt="Logo"
+                  class="img-fluid rounded-5 shadow"
+                />
               </a>
             </div>
             <div className="col-lg-3 col-md-3 col-12">
-              <a className="navbar-brand" href="#">
-                <img src="/azad-kashmir.jpg" alt="Logo" className="img-fluid" />
+              <a href="#">
+                <img
+                  src="/azad-kashmir.jpg"
+                  alt="Logo"
+                  className="img-fluid rounded-5 shadow"
+                />
               </a>
             </div>
             <div className="col-lg-3 col-md-3 col-12 mb-5">
-              <a className="navbar-brand" href="#">
-                <img src="/islamabad.jpg" alt="Logo" className="img-fluid" />
+              <a href="#">
+                <img
+                  src="/islamabad.jpg"
+                  alt="Logo"
+                  className="img-fluid rounded-5 shadow"
+                />
               </a>
             </div>
           </div>
@@ -75,24 +92,40 @@ function SearchPage() {
         {/* second row start */}
         <div className="find-in-cities ">
           <div className="row">
-            <div className="col-lg-3 col-md-3 col-12">
-              <a className="navbar-brand" href="#">
-                <img src="/lahore.jpg" alt="Logo" className="img-fluid" />
+            <div className="col-lg-3 col-md-3 col-12 img-container">
+              <a href="#">
+                <img
+                  src="/lahore.jpg"
+                  alt="Logo"
+                  className="img-fluid rounded-5 shadow"
+                />
               </a>
             </div>
             <div className="col-lg-3 col-md-3 col-12">
-              <a className="navbar-brand" href="#">
-                <img src="/karachi.jpg" alt="Logo" className="img-fluid" />
+              <a href="#">
+                <img
+                  src="/karachi.jpg"
+                  alt="Logo"
+                  className="img-fluid rounded-5 shadow"
+                />
               </a>
             </div>
             <div className="col-lg-3 col-md-3 col-12">
-              <a className="navbar-brand" href="#">
-                <img src="/azad-kashmir.jpg" alt="Logo" className="img-fluid" />
+              <a href="#">
+                <img
+                  src="/azad-kashmir.jpg"
+                  alt="Logo"
+                  className="img-fluid rounded-5 shadow"
+                />
               </a>
             </div>
             <div className="col-lg-3 col-md-3 col-12 mb-5">
-              <a className="navbar-brand" href="#">
-                <img src="/islamabad.jpg" alt="Logo" className="img-fluid" />
+              <a href="#">
+                <img
+                  src="/islamabad.jpg"
+                  alt="Logo"
+                  className="img-fluid rounded-5 shadow"
+                />
               </a>
             </div>
           </div>

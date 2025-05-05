@@ -13,13 +13,23 @@ function LoginPage() {
   return (
     <div
       className="d-flex justify-content-center align-items-center"
-      style={{ height: "100vh", backgroundColor: "#f7f7f7" }}
+      style={{
+        height: "100vh",
+      }}
     >
       <div
         className="card"
-        style={{ maxWidth: "400px", width: "100%", padding: "20px" }}
+        style={{
+          maxWidth: "350px",
+          width: "100%",
+          padding: "20px",
+          backgroundColor: "#fff",
+          borderRadius: "20px",
+          boxshadow: "0 8px 20px rgba(0, 0, 0, 0.1)",
+        }}
       >
-        <h2 className="text-center mb-4">Foodpanda</h2>
+        <h2 className="text-center mb-4">Welcome!</h2>
+        <p> Sign up or log in to continue</p>
         {/* Login form */}
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -28,7 +38,7 @@ function LoginPage() {
             </label>
             <input
               type="email"
-              className="form-control"
+              className="form-control custom-input"
               id="email"
               placeholder="Enter email"
               value={email}
@@ -42,7 +52,7 @@ function LoginPage() {
             </label>
             <input
               type="password"
-              className="form-control"
+              className="form-control custom-input"
               id="password"
               placeholder="Enter password"
               value={password}
@@ -52,7 +62,7 @@ function LoginPage() {
           </div>
 
           <div className="d-flex justify-content-between align-items-center">
-            <button type="submit" className="btn btn-pink w-100">
+            <button type="submit" className="btn login-pink-btn w-100">
               Login
             </button>
           </div>

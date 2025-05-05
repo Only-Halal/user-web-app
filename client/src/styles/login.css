@@ -1,67 +1,50 @@
 /* App.css or any custom CSS file */
-.btn-pink {
-  background-color: #e91e63; /* Pink color */
-  border-color: #e91e63;
+.login-pink-btn {
+  /* background-color: #c21760;   */
+  background-color: #ffc300;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-.btn-pink:hover {
-  background-color: #d81b60; /* Darker pink for hover effect */
-  border-color: #d81b60;
+.login-pink-btn:hover {
+  background-color: #f4c430;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
-.form-control {
-  /* background-color: #ffffff;  */
-  padding: 5px 10px; /* Add some padding around the label */
-  border-radius: 5px; /* Optional: rounded corners */
-  color: #000; /* Text color */
-}
-
-/* App.css or any custom CSS file */
-
-.form-control {
-  border-color: #f8bbd0; /* Light pink border for form controls */
-}
-
-.form-control:focus {
-  border-color: #e91e63; /* Pink border when the input field is focused */
-  box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.25); /* Pink glow effect */
-}
-
-.btn-pink {
-  background-color: #e91e63; /* Pink background */
-  border-color: #e91e63; /* Pink border */
-}
-
-.btn-pink:hover {
-  background-color: #d81b60;
-  border-color: #d81b60;
-}
-
-input::placeholder {
-  color: #e91e63; /* Pink placeholder text */
+.login-pink-btn:active {
+  background-color: #ffc300 !important; /* Keep original color */
+  color: white !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  /* border: none !important;
+  outline: none !important; */
 }
 .btn-signup {
-  border-color: #f8bbd0; /* Light pink border for form controls */
+  background-color: #ff69b4; /* Pink */
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-signup:hover {
   background-color: #f8bbd0;
 }
-
-/* login  */
-/* log in button  */
-.login-btn {
-  border: #999 solid 1px !important;
+.btn-signup:active {
+  background-color: #f8bbd0 !important; /* Keep original color */
+  color: white !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  /* border: none !important;
+  outline: none !important; */
 }
-
-.login-btn:hover {
-  background-color: #d81b60; /* Darker pink for hover effect */
-  border-color: #d81b60;
+.form-control:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: inherit;
+  background-color: inherit;
 }
-/* signup  in button  */
-.btn-singup {
-  background-color: #d81b60 !important;
+.custom-input {
+  border: 1px solid #ffc300;
 }
-
-.btn-singup:hover {
-  background-color: #d81b60 !important; /* Darker pink for hover effect */
-  border-color: #d81b60 !important;
+.custom-input:focus {
+  border: 1px solid #ffc300;
+  box-shadow: none;
 }
