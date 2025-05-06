@@ -19,14 +19,17 @@
   outline: none !important; */
 }
 .btn-signup {
-  background-color: #ff69b4; /* Pink */
+  background-color: #ffc300; /* Pink */
+  /* background-color: #ff69b4; Pink */
+
   color: white;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-signup:hover {
-  background-color: #f8bbd0;
+  /* background-color: #f8bbd0; */
+  background-color: #f4c430;
 }
 .btn-signup:active {
   background-color: #f8bbd0 !important; /* Keep original color */
