@@ -1,3 +1,42 @@
 .navbar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* x-offset, y-offset, blur-radius, color */
 }
+
+/* 
+navbar2 css */
+.navbar .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Optional: fix submenu alignment */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+
+/* Keep dropdown open on hover of submenu items */
+.dropdown-menu > .dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+.custom-shift {
+  margin-left: 15%;
+}
+.custom-nav {
+  background-color: #252525 !important  ;
+  color: white;
+}
+.navbar-nav .nav-item a {
+  color: white !important;
+}
+.dropdown-menu a {
+  color: #252525 !important;
+}
+.navbar-nav .nav-link {
+  font-size: 12px; /* Or any size you prefer */
+}
