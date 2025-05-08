@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-div {
+  background-color: #282932 !important;
+
+  padding: 120px;
+}
+/* 
+.inner-div {
+  background-image: url("../../public/home-glob.png"); 
+  background-size: 80% auto;
+
+  background-size: 80% auto;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: top center !important;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.inner-div::before {
+  background-image: url("../../public/home-eclips.png");
+
+  content: "";
+  background-color: #86550bc4;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+} */
+.container {
+  width: 80% !important;
+}
+.inner-div {
+  background-image: url("../../public/home-glob.png");
+
+  background-size: 80% auto;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+}
+.inner-div::before {
+  background-image: url("../../public/home-eclips.png");
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* height of eclipse shape */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  z-index: 0; /* Above the inner-div background */
+}
+
+.banner-text h1 {
+  color: white;
+  font-size: 80px !important;
+}
+.banner-text p {
+  color: white;
+  font-size: 18px;
+  line-height: 30px !important;
+}
+
+.read-more-btn {
+  width: auto;
+  border-radius: 35px !important;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  font-size: 16px !important;
+  font-weight: 600;
+}
+
+/* media query start */
+@media (max-width: 767.98px) {
+  .banner-text h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .banner-text p {
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .banner-text {
+    margin-bottom: 2rem;
+  }
+
+  img {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+/* media query ended */

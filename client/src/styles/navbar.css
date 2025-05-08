@@ -1,6 +1,10 @@
-.navbar {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* x-offset, y-offset, blur-radius, color */
+* {
+  margin: 0;
+  padding: 0;
 }
+
+/* .navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* x-offset, y-offset, blur-radius, color }*/
 
 /* 
 navbar2 css */
@@ -28,8 +32,9 @@ navbar2 css */
   margin-left: 15%;
 }
 .custom-nav {
-  background-color: #252525 !important  ;
+  background-color: #282932 !important;
   color: white;
+  position: relative;
 }
 .navbar-nav .nav-item a {
   color: white !important;
@@ -38,5 +43,54 @@ navbar2 css */
   color: #252525 !important;
 }
 .navbar-nav .nav-link {
-  font-size: 12px; /* Or any size you prefer */
+  font-size: 14px; /* Or any size you prefer */
+  font-weight: 400;
+  font-weight: bold;
+  font-family: Helvetica, arial;
+}
+/* nav div  */
+.nav-div {
+  background-color: #282932;
+  position: relative;
+}
+.nav-link-color {
+  color: #f7b614 !;
+}
+
+.navbar-nav .nav-item a {
+  color: white;
+  margin-right: 25px;
+}
+
+.navbar-nav .nav-item a:hover {
+  color: #f7b614 !important;
+}
+
+.nav-right-text {
+  font-size: 14px; /* Or any size you prefer */
+  font-weight: 400;
+  font-weight: bold;
+  font-family: Helvetica, arial;
+
+  color: white;
+}
+
+/* Add this to your CSS */
+
+/* .navbar-nav .nav-item a:hover,
+.navbar-nav .nav-item a:focus,
+.navbar-nav .nav-item a:active {
+  color: #c70039; /* Example hover color */
+
+.custom-nav::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
+  background-size: 6px 1px; /* Controls spacing: 6px gap, 1px dot */
+  background-repeat: repeat-x;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }

@@ -13,6 +13,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./styles/login.css";
 import "./styles/navbar.css";
 import "./styles/searchpage.css";
+import "./styles/home.css";
 
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Important for toggle functionality
 
