@@ -54,11 +54,12 @@
   font-weight: 400;
   font-style: normal;
 }
+
 .prepare-food-img {
   background-image: url("../../public/coockingwithfire.jpg");
   background-size: cover;
   background-position: center;
-  height: 450px;
+  height: 600px;
   display: flex;
 }
 
@@ -224,4 +225,52 @@ element.style {
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both;
+}
+
+/* get more with app */
+
+.get-more-app {
+  background-color: #f2efe6 !important;
+  height: auto;
+}
+.sit-order-section {
+  padding: 0px;
+  margin: 0px;
+}
+.sit-order-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  max-width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.sit-order-right {
+  background-color: #282932;
+  margin: 0px;
+  padding: 0px;
+}
+.sit-order-right h2 {
+  color: white;
+}
+.sit-order-right p {
+  color: white;
+}
+.sit-order-right ul {
+  color: white;
+}
+/* read more btn */
+.read-more {
+  font-size: 16px;
+  font-weight: 500;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.sit-order-text {
+  align-items: center;
 }

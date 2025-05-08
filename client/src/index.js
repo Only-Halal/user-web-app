@@ -12,6 +12,8 @@ import "./styles/login.css";
 import "./styles/navbar.css";
 import "./styles/searchpage.css";
 
+import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Important for toggle functionality
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // Render the main App component
