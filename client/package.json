@@ -6,6 +6,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "@glidejs/glide": "^3.7.1",
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
     "@popperjs/core": "^2.11.8",
@@ -20,6 +21,7 @@
     "react-router-dom": "^7.5.3",
     "react-scripts": "5.0.1",
     "react-toastify": "^11.0.5",
+    "swiper": "^11.2.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

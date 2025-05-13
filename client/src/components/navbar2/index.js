@@ -6,10 +6,10 @@ function Navbar() {
       <nav class="navbar navbar-expand-lg navbar-light bg-light custom-nav  container">
         <a class="navbar-brand" href="#">
           <img
-            src="/logozomoto.png"
+            src="/logo.webp"
             alt="Logo"
             className="img-fluid"
-            style={{ height: "auto", width: "auto" }}
+            style={{ height: "auto", width: "200px" }}
           />
         </a>
         <div

@@ -1,0 +1,14 @@
+.home-footer {
+  /* background-image: url("../../public/home-glob.png"); */
+  background-color: #282932 !important;
+  color: white;
+  padding-top: 100px;
+  height: auto;
+  background-position: top center;
+
+  background-repeat: no-repeat;
+
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}

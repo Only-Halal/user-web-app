@@ -20,7 +20,7 @@ function LoginPage() {
       <div
         className="card"
         style={{
-          maxWidth: "350px",
+          maxWidth: "400px",
           width: "100%",
           padding: "20px",
           backgroundColor: "#fff",

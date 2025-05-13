@@ -1,0 +1,48 @@
+.slider-nav {
+  transform: none;
+  z-index: 10;
+  color: #ffc107;
+  background: transparent;
+  font-weight: bolder;
+  padding: 6px 12px;
+  cursor: pointer;
+  top: 100%;
+  border: none;
+  position: absolute;
+}
+
+.swiper-button-prev {
+  left: 10%;
+}
+
+.swiper-button-next {
+  right: 10%;
+}
+
+@media (max-width: 991px) {
+  .slider-nav {
+    top: 142%;
+  }
+
+  .swiper-button-prev {
+    left: 5%;
+  }
+
+  .swiper-button-next {
+    right: 5%;
+  }
+}
+
+@media (min-width: 991px) {
+  .slider-nav {
+    top: 100%;
+  }
+
+  .swiper-button-prev {
+    left: 10%;
+  }
+
+  .swiper-button-next {
+    right: 10%;
+  }
+}
