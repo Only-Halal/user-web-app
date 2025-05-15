@@ -8,7 +8,7 @@
   background-color: #282932 !important;
   padding-top: 100px;
   height: auto;
-  height: 750px;
+
   background-position: top center;
   background-size: cont;
   background-repeat: no-repeat;
@@ -113,12 +113,12 @@
   fill: #ffffff;
 }
 
-/* custom shape ended */
+/* custom shape ended 
 .card {
-  /* border: none;
+  border: none;
   border-radius: 20px;
-  background-color: #f2efe6; */
-}
+  background-color: #f2efe6; 
+}*/
 .card:hover {
   border: none;
 
@@ -132,4 +132,113 @@
 
 .new-div {
   display: block;
+}
+
+/* Base animation for small screens */
+@keyframes moveBike {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(calc(100vw - 100vw)); /* Adjust for small screen */
+  }
+}
+
+.bike {
+  animation: moveBike 3s linear forwards;
+}
+
+/* Override for larger screens */
+@media (min-width: 768) {
+  @keyframes moveBike {
+    0% {
+      transform: translateX(100vw);
+    }
+    100% {
+      transform: translateX(calc(100vw - 100vw)); /* Adjust for wider view */
+    }
+  }
+}
+
+@media (min-width: 576) {
+  @keyframes moveBike {
+    0% {
+      transform: translateX(100vw);
+    }
+    100% {
+      transform: translateX(calc(100vw - 100vw)); /* Adjust for wider view */
+    }
+  }
+}
+
+/* sit order css start */
+.sit-order-section {
+  padding: 0px;
+  margin: 0px;
+  width: auto;
+}
+.sit-order-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  max-width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.sit-order-right {
+  background-color: #282932;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+}
+.sit-order-right h2 {
+  color: white;
+  margin-bottom: 50px;
+}
+.sit-order-right p {
+  color: white;
+  margin-bottom: 50px;
+}
+.sit-order-right ul {
+  color: white;
+}
+
+/* subscribe section */
+.subscribe-section {
+  position: absolute;
+  height: 200px;
+  width: 100%; /* Make sure it spans full width */
+  background-color: #f7b614;
+  bottom: 0;
+  left: 0;
+  background-image: url("../../public/homepage-waves.png");
+
+  display: flex;
+  justify-content: center; /* center items horizontally */
+  align-items: center; /* center items vertically */
+  gap: 2rem;
+}
+.get-more-app {
+  position: relative;
+  padding-top: 150px;
+}
+
+@media (max-width: 991px) {
+  .sit-order-img {
+    display: none;
+  }
+}
+
+.btn-subscribe {
+  background-color: #282932;
+  color: white;
+}
+.btn-subscribe:hover {
+  background-color: #f2efe6;
+  color: #282932;
 }

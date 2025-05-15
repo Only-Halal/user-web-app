@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Thumbs } from "swiper/modules";
-import { Navigation } from "swiper/modules";
-import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/thumbs"; // Import Thumbs CSS
 import "swiper/css/navigation"; // Import Navigation CSS
 import "swiper/css/autoplay"; // Import Autoplay CSS
+
+import { EffectCoverflow, Autoplay, Navigation } from "swiper/modules";
+
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 
 // Initialize SwiperCore to use these modules
 
@@ -16,74 +18,68 @@ function Slider() {
 
   // Sample image URLs
   const images = [
-    "/newyork.jpg",
-    "/washington.jpg",
-    "/chicago.jpg",
-    "/newjersey.jpg",
-    "/usa.jpg",
-    "/arizona.jpg",
-    "/newyork.jpg",
-    "/washington.jpg",
+    { src: "/newyork.jpg", link: "/newyork", title: "New York" },
+    { src: "/washington.jpg", link: "/washington", title: "Washington" },
+    { src: "/chicago.jpg", link: "/chicago", title: "chicago" },
+    { src: "/newjersey.jpg", link: "/newjersey", title: "New jersey" },
   ];
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
   return (
     <div
-      className="container relative"
+      className="container relative py-5"
       style={{ width: "80%", margin: "0 auto" }}
     >
-      {/* cutome button started */}
-      <button ref={prevRef} className="swiper-button-prev slider-nav"></button>
-      <button ref={nextRef} className="swiper-button-next slider-nav"></button>
-
       {/* button for slider ended */}
 
       {/* Thumbnails Swiper */}
       <Swiper
-        onSwiper={setThumbsSwiper}
-        modules={[Thumbs, Autoplay, Navigation]}
-        spaceBetween={10}
-        slidesPerView={4}
-        watchSlidesProgress
+        effect="coverflow"
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={window.innerWidth < 768 ? 1 : 3}
+        loop={true}
         autoplay={{
-          delay: 1000,
+          delay: 2000,
           disableOnInteraction: false,
         }}
-        loop={true}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
         }}
-        onBeforeInit={(swiper) => {
-          swiper.params.navigation.prevEl = prevRef.current;
-          swiper.params.navigation.nextEl = nextRef.current;
-        }}
-        breakpoints={{
-          0: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        }}
-        style={{ marginTop: "10px" }}
+        navigation
+        modules={[EffectCoverflow, Autoplay, Navigation]}
+        className="mySwiper"
+        style={{ paddingBottom: "40px" }}
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <img
-              src={img}
-              alt={`Thumb ${index + 1}`}
+            <a href={img.link}>
+              <img
+                src={img.src}
+                alt={`Slide ${index}`}
+                style={{
+                  width: "100%",
+                  borderRadius: "12px",
+                  height: "auto",
+                  cursor: "pointer",
+                }}
+              />
+            </a>
+            <p
               style={{
-                width: "100%",
-                borderRadius: "8px",
-                cursor: "pointer",
-                height: "auto",
+                textAlign: "center",
+                marginTop: "10px",
+                fontWeight: "bold",
+                backgroundColor: "#f7b614",
               }}
-            />
+            >
+              {img.title}
+            </p>
           </SwiperSlide>
         ))}
       </Swiper>

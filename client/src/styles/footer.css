@@ -1,14 +1,40 @@
-.home-footer {
-  /* background-image: url("../../public/home-glob.png"); */
-  background-color: #282932 !important;
-  color: white;
-  padding-top: 100px;
-  height: auto;
-  background-position: top center;
-
+.main-footer {
+  background-image: url("../../public/home-banner.png");
+  background-color: #282932;
   background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+  padding: 100px 0px 100px 0px;
+}
+.call-img {
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+.call-img img {
+  height: auto;
 
+  width: 522px;
+  border-radius: 10px 0px 0px 10px;
+}
+.call-text {
+  background-color: #ffc107;
+  width: 522px;
+  border-radius: 0px 10px 10px 0px;
+  color: white;
+}
+.footer-logo {
+  display: flex;
   justify-content: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  margin-bottom: 25px;
+}
+.footer-logo img {
+  width: 150px; /* adjust as needed */
+  height: auto;
+}
+
+@media (max-width: 991px) {
+  .call-img {
+    display: none;
+    border-radius: none;
+  }
 }
