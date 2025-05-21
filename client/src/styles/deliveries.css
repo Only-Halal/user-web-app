@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-delivery-section {
+  margin-top: 20px !important;
+}
+
+.card-delivery {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
+.card-delivery:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border: none;
+  overflow: hidden;
+}
+
+/* Optional: Image effect on hover */
+.card-delivery:hover .card-img-top {
+  transform: scale(1.1);
+
+  filter: brightness(85%) !important;
+  transition: filter 0.3s ease-in-out !important;
+}
+/* banner css */
+.delivery-banner {
+  margin: 0px;
+  padding: 0px;
+  background-color: #f7f7f7;
+  height: 300px;
+}
+.delivery-banner img {
+  height: 20vh;
+  width: auto;
+}
+
+.banner-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* delivery card css  */
+.delivery-card {
+  position: relative;
+  margin: 20px 0;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5),
+    0 20px 20px rgba(0, 0, 0, 0.5);
+  transition: 1s;
+}
+.delivery-card:hover {
+  z-index: 10000;
+  transform: perspective(2000px) rotate(-10deg);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5),
+    0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.delivery-card .Box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  position: relative;
+  transform-origin: left;
+  z-index: 1;
+  transition: 1s cubic-bezier(0.15, 1.7, 0.84, 0.58);
+  background: #111;
+}
+.delivery-card .Box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.delivery-card:hover .Box {
+  transform: rotateY(-135deg);
+}
+.card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: -1;
+  font-size: 0.5rem;
+}
+/* delivery lists */
+
+.delivery-lists {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.delivery-lists li {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.delivery-lists li::after {
+  content: ">";
+  margin-left: 8px;
+  color: #888;
+}
+
+.delivery-lists li:last-child::after {
+  content: "";
+}
+
+/* button  */
+
+.btn-flip {
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+}
+
+.btn-flip:hover::after {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+
+.btn-flip:hover::before {
+  opacity: 0;
+  transform: translateY(50%) rotateX(90deg);
+}
+
+.btn-flip::after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  color: #323237;
+  display: block;
+  transition: 0.3s ease; /* Assuming $speed is a timing function like this */
+  position: absolute;
+  background: #adadaf;
+  content: attr(data-back);
+  transform: translateY(-50%) rotateX(90deg);
+}
+
+.btn-flip::before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #adadaf;
+  display: block;
+  padding: 0 30px;
+  line-height: 40px;
+  transition: 0.3s ease; /* Assuming $speed is a timing function like this */
+  position: relative;
+  background: #323237;
+  content: attr(data-front);
+  transform: translateY(0) rotateX(0);
+}
+
+/* card deliveries */
+.card-img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.1);
+}

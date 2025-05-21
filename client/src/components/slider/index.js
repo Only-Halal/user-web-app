@@ -18,10 +18,10 @@ function Slider() {
 
   // Sample image URLs
   const images = [
-    { src: "/newyork.jpg", link: "/newyork", title: "New York" },
-    { src: "/washington.jpg", link: "/washington", title: "Washington" },
-    { src: "/chicago.jpg", link: "/chicago", title: "chicago" },
-    { src: "/newjersey.jpg", link: "/newjersey", title: "New jersey" },
+    { src: "/newyork.jpg", link: "/deliveries", title: "New York" },
+    { src: "/washington.jpg", link: "/deliveries", title: "Washington" },
+    { src: "/chicago.jpg", link: "/deliveries", title: "chicago" },
+    { src: "/newjersey.jpg", link: "/deliveries", title: "New jersey" },
   ];
   const prevRef = useRef(null);
   const nextRef = useRef(null);

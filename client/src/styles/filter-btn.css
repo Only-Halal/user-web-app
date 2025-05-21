@@ -1,0 +1,15 @@
+/* Remove stickiness by default */
+.filter-btns {
+  position: static;
+  z-index: 3;
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+/* Enable sticky only on lg and above */
+@media (min-width: 992px) {
+  .filter-btns {
+    position: sticky;
+    top: 0;
+  }
+}
