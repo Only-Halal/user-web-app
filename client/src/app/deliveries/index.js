@@ -4,7 +4,9 @@ import Footer from "../../components/footer";
 import "../../styles/footer.css";
 import Card from "../../components/filter-btn";
 import { MdWidthFull } from "react-icons/md";
-
+import { CiClock2 } from "react-icons/ci";
+import { RiMotorbikeFill } from "react-icons/ri";
+import Restaurants from "../../components/restaurants";
 function Deliveries() {
   return (
     <>
@@ -12,16 +14,14 @@ function Deliveries() {
       <div className="container-fluid main-div">
         <div className="inner-div container">
           {/* <div className="eclips-div"> </div> */}
-
           {/* Content here if any */}
-
           <div className="row">
             <div
               className="col-xl-6 col-lg-6 col-md-12 col-sm-4 col-12 d-flex align-items-center"
               style={{ color: "white" }}
             >
               <div className="banner-text d-block mx-auto">
-                <h1>
+                <h1 className="fs-1">
                   Only Halal
                   <span style={{ display: "block", color: "#f7b614" }}>
                     Food Delivery
@@ -32,7 +32,6 @@ function Deliveries() {
                   non. Fusce in felis vel arcu maximus placerat eu ut arcu. Ut
                   nunc ex, gravida vel porttitor et, pretium ac sapien.
                 </p>
-
                 <button className="btn btn-warning rounded read-more-btn mt-5">
                   Read More
                 </button>
@@ -81,71 +80,9 @@ function Deliveries() {
       
       */}
       {/* alternate button */}
-      <div className="container">
-        <ul class="delivery-lists my-5">
-          <li>
-            <a href="/home">Home</a>
-          </li>
-          <li>New York</li>
-        </ul>
-        <div
-          className="card card-deliveries"
-          style={{ width: "18rem", overflow: "hidden" }}
-        >
-          <img src="card-kabab.jpg" />
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>{" "}
-      </div>
-      {/* <div class="card">
-        <div class="Box">
-          <img src="https://images.pexels.com/photos/594610/pexels-photo-594610.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-        </div>
-        <div class="details">
-          <h2>Lorem ipsum dolor</h2>
-          <p>
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur.{" "}
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="Box">
-          <img src="https://images.pexels.com/photos/3699319/pexels-photo-3699319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-        </div>
-        <div class="details">
-          <h2>Lorem ipsum dolor</h2>
-          <p>
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur.{" "}
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="Box">
-          <img src="https://images.pexels.com/photos/598917/pexels-photo-598917.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-        </div>
-        <div class="details">
-          <h2>Lorem ipsum dolor</h2>
-          <p>
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur.{" "}
-          </p>
-        </div>
-      </div> */}
+      {/* card section starts here  */}
+      <Restaurants />
+      {/* card section ended here */}
       <div className="main-footer">
         <div className=" container call-container d-flex justify-content-center mb-5">
           <div className="call-img">
@@ -172,7 +109,6 @@ function Deliveries() {
           </p>
         </div>
       </div>
-      ;
     </>
   );
 }

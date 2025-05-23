@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import LoginPage from "./app/login";
 import HomePage from "./app/home";
 import Deliveries from "./app/deliveries";
+import RestaurantDetails from "./app/restaurant-details";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,6 +20,7 @@ import "./styles/slider.css";
 import "./styles/footer.css";
 import "./styles/deliveries.css";
 import "./styles/filter-btn.css";
+import "./styles/restaurant-details.css";
 
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Important for toggle functionality
 
@@ -38,6 +40,9 @@ root.render(
         {/* Route for the AboutPage */}
 
         <Route path="/deliveries" element={<Deliveries />} />
+        {/* Route for the AboutPage */}
+
+        <Route path="/restaurant-details" element={<RestaurantDetails />} />
         {/* Route for the AboutPage */}
       </Routes>
     </Router>

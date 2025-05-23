@@ -4,12 +4,18 @@ import { CiPizza } from "react-icons/ci";
 import { TbBowlSpoon } from "react-icons/tb";
 import { GiMeatCleaver } from "react-icons/gi";
 import { MdDeliveryDining } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 function Cards() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/restaurant-items");
+  };
   return (
-    <div className="container filter-btns">
-      <div className="cards-home">
-        <div className="container my-5">
+    <div className="container filter-btns my-3">
+      <div className="cards-home " onClick={handleClick}>
+        <div className="container">
           <div className="row row-cols-2 row-cols-md-6 row-cols-lg-6 g-4">
             {/* Card 1 */}
             <div className="col">

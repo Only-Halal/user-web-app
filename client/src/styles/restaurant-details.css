@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.restaurant-details-banner {
+  width: 100%;
+  height: auto;
+}
+.restaurant-details-banner img {
+  width: 100%;
+  height: 300px; /* or any fixed height */
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+.restaurant-content p {
+  line-height: 0.2;
+}
+/* .restaurant-content-btn {
+} */
+.map-banner {
+  width: 100%; /* Full width of its column */
+  height: auto;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  padding: 0px;
+}
+
+.map-banner iframe {
+  width: 100%; /* Full width of .map-banner */
+  height: 200px;
+  border-radius: 20px;
+  border: 0;
+  padding: 0;
+  padding: 0px;
+  display: block;
+}
