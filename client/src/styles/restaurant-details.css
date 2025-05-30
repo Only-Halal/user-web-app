@@ -7,13 +7,17 @@
   width: 100%;
   height: auto;
 }
+
 .restaurant-details-banner img {
   width: 100%;
-  height: 300px; /* or any fixed height */
+  height: 350px; /* adjust as needed */
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
+  display: block;
+  image-rendering: auto; /* fallback for browsers that support it */
 }
+
 .restaurant-content p {
   line-height: 0.2;
 }

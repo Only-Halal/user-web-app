@@ -8,11 +8,38 @@ import { useNavigate } from "react-router-dom";
 import { CiClock2 } from "react-icons/ci";
 import { RiMotorbikeFill } from "react-icons/ri";
 import Footer from "../../components/footer";
+import { useState } from "react";
+import FoodModal from "../../components/modal";
+
+const foodList = [
+  {
+    id: 1,
+    name: "Burger",
+    description: "Delicious beef burger",
+    price: 5.99,
+    image: "/images/burger.jpg",
+  },
+  {
+    id: 2,
+    name: "Pizza",
+    description: "Cheesy pepperoni pizza",
+    price: 8.99,
+    image: "/images/pizza.jpg",
+  },
+];
 
 function RestaurantDetails() {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/restaurant-details");
+  };
+
+  const [selectedFood, setSelectedFood] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleFoodClick = (food) => {
+    setSelectedFood(food);
+    setShowModal(true);
   };
   return (
     <>
@@ -92,6 +119,54 @@ function RestaurantDetails() {
             </div>
           </div>
         </div>
+        {/* new style */}
+
+        <div className="card mb-3 w-50 mx-auto m-0 p-0">
+          <div className="row g-0 d-flex align-items-center flex-row-reverse ">
+            {/* Thumbnail Image on Right */}
+            <div className="col-md-4 ">
+              <img
+                src="card-soap.jpeg"
+                className="img-fluid rounded-end"
+                alt="Thumbnail"
+                style={{
+                  objectFit: "cover",
+                  height: "200px",
+                  width: "100%",
+                  padding: "0px",
+                }}
+              />
+            </div>
+
+            {/* Content on Left */}
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-title">Classic Double Smash Burger</h5>
+                <p className="card-text">
+                  Freshly smashed beef patties with melted cheese, lettuce,
+                  tomato, and our special sauce on a toasted bun.
+                </p>
+                <p className="card-text">
+                  <small className="text-muted">Last updated 3 mins ago</small>
+                </p>
+                <div class="content ">
+                  <p className="d-flex justify-content-start align-items-center ">
+                    <span className="me-2">
+                      <CiClock2 size={24} />
+                    </span>
+                    30–45min
+                    <span className="mx-3">
+                      <RiMotorbikeFill size={24} />
+                    </span>
+                    TK 49
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* end of new style */}
 
         {/* card of features items items are startede */}
         <div className="featured-items mb-5">
@@ -100,9 +175,13 @@ function RestaurantDetails() {
               <h1 className="fs-3 fs-md-2 fs-lg-1">Feature Items</h1>
             </div>
             <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12">
-              <div class="restaurant-card " onClick={handleClick}>
+              <div class="restaurant-card ">
                 <div class="image">
-                  <img src="card-soap.jpeg" />
+                  <img
+                    src="card-soap.jpeg"
+                    onClick={handleFoodClick}
+                    closeButton
+                  />
                 </div>
                 <div class="card-inner">
                   <div class="header">
@@ -201,7 +280,6 @@ function RestaurantDetails() {
             </div>
           </div>
         </div>
-
         {/* featured item ended*/}
         {/* New Arrival started */}
         <div className="featured-items mb-5">
@@ -210,8 +288,8 @@ function RestaurantDetails() {
               <h1 className="fs-3 fs-md-2 fs-lg-1">New Arrival Items</h1>
             </div>
             <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12">
-              <div class="restaurant-card " onClick={handleClick}>
-                <div class="image">
+              <div class="restaurant-card ">
+                <div class="image" onClick={handleClick}>
                   <img src="card-soap.jpeg" />
                 </div>
                 <div class="card-inner">
@@ -312,6 +390,12 @@ function RestaurantDetails() {
           </div>
         </div>
         {/* New Arrival ended */}
+
+        <FoodModal
+          show={showModal}
+          onClose={() => setShowModal(false)}
+          food={selectedFood}
+        />
       </div>
       <div className="container">
         <Footer />

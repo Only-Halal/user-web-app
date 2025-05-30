@@ -21,6 +21,7 @@ import "./styles/footer.css";
 import "./styles/deliveries.css";
 import "./styles/filter-btn.css";
 import "./styles/restaurant-details.css";
+import "./styles/modal.css"; // Import custom styles for the food modal
 
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Important for toggle functionality
 
