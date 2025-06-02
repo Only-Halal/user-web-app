@@ -23,6 +23,8 @@ import "./styles/filter-btn.css";
 import "./styles/restaurant-details.css";
 
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Important for toggle functionality
+import EditProfile from "./app/editProfile";
+import { AppProvider } from "./context/appContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -30,21 +32,23 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        {/* Route for the HomePage */}
-        <Route path="/searchpage" element={<SearchPage />} />
-        {/* Route for the AboutPage */}
+      <AppProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          {/* Route for the HomePage */}
+          <Route path="/searchpage" element={<SearchPage />} />
+          {/* Route for the AboutPage */}
 
-        <Route path="/home" element={<HomePage />} />
-        {/* Route for the AboutPage */}
+          <Route path="/editProfile/:userId" element={<EditProfile />} />
+          {/* Route for the AboutPage */}
 
-        <Route path="/deliveries" element={<Deliveries />} />
-        {/* Route for the AboutPage */}
+          <Route path="/deliveries" element={<Deliveries />} />
+          {/* Route for the AboutPage */}
 
-        <Route path="/restaurant-details" element={<RestaurantDetails />} />
-        {/* Route for the AboutPage */}
-      </Routes>
+          <Route path="/restaurant-details" element={<RestaurantDetails />} />
+          {/* Route for the AboutPage */}
+        </Routes>
+      </AppProvider>
     </Router>
   </React.StrictMode>
 );
