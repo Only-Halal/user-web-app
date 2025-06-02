@@ -14,7 +14,6 @@ import Footer from "../../components/footer-home";
 
 function HomePage() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   return (
     <>
       <Navbar />

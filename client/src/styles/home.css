@@ -113,17 +113,21 @@
   fill: #ffffff;
 }
 
-/* custom shape ended 
 .card {
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 20px;
-  background-color: #f2efe6; 
-}*/
-.card:hover {
-  border: none;
+  /* background-color: #f2efe6; */
+  overflow: hidden;
+  cursor: pointer;
+}
 
-  transform: scale(1.08);
-  transition: transform 0.2s ease;
+/* this is the card class from where we apply css on card class */
+
+.card:hover {
+  /* border: none; */
+
+  /* transform: scale(1.08); */
+  /* transition: transform 0.2s ease; */
 }
 
 .cards-home {

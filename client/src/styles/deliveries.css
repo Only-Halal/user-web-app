@@ -177,12 +177,12 @@
 }
 
 /* card deliveries */
-.card-img {
+/* .card-img {
   width: 100%;
   height: auto;
   transition: transform 0.3s ease;
-}
+} */
 
 .card:hover .card-img {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }

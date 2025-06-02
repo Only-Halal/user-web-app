@@ -89,7 +89,7 @@ function RestaurantDetails() {
               <div className="map-banner">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.608507402832!2d-73.92867492315077!3d40.726634036718345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25eb7db7ef65b%3A0xab9cb9e0dcf7106a!2sRestaurant%20Depot!5e0!3m2!1sen!2s!4v1748023180528!5m2!1sen!2s" // Replace with your real URL
-                  style={{ border: 0 }}
+                  style={{ border: "0" }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -119,277 +119,178 @@ function RestaurantDetails() {
             </div>
           </div>
         </div>
-        {/* new style */}
-
-        <div className="card mb-3 w-50 mx-auto m-0 p-0">
-          <div className="row g-0 d-flex align-items-center flex-row-reverse ">
-            {/* Thumbnail Image on Right */}
-            <div className="col-md-4 ">
-              <img
-                src="card-soap.jpeg"
-                className="img-fluid rounded-end"
-                alt="Thumbnail"
-                style={{
-                  objectFit: "cover",
-                  height: "200px",
-                  width: "100%",
-                  padding: "0px",
-                }}
-              />
+        {/* new style  testing testng testing testng testng */}
+        <div className="delivery-item-header mb-3 ">
+          <h1 className="fs-3 fs-md-2 fs-lg-1">New Arrival</h1>
+        </div>
+        <div className="row">
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-3" onClick={handleFoodClick}>
+              <div class="row no-gutters">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 p-0 m-0">
+                  <img src="card-pizza.jpg" class="card-img" alt="..." />
+                </div>
+              </div>
             </div>
-
-            {/* Content on Left */}
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title">Classic Double Smash Burger</h5>
-                <p className="card-text">
-                  Freshly smashed beef patties with melted cheese, lettuce,
-                  tomato, and our special sauce on a toasted bun.
-                </p>
-                <p className="card-text">
-                  <small className="text-muted">Last updated 3 mins ago</small>
-                </p>
-                <div class="content ">
-                  <p className="d-flex justify-content-start align-items-center ">
-                    <span className="me-2">
-                      <CiClock2 size={24} />
-                    </span>
-                    30–45min
-                    <span className="mx-3">
-                      <RiMotorbikeFill size={24} />
-                    </span>
-                    TK 49
-                  </p>
+          </div>
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-3" onClick={handleFoodClick}>
+              <div class="row no-gutters">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 p-0 m-0">
+                  <img src="card-pizza.jpg" class="card-img" alt="..." />
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {/* new style row 2 starts */}
 
+        <div className="row">
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-3" onClick={handleFoodClick}>
+              <div class="row no-gutters">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 p-0 m-0">
+                  <img src="card-pizza.jpg" class="card-img" alt="..." />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-3" onClick={handleFoodClick}>
+              <div class="row no-gutters">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 p-0 m-0">
+                  <img src="card-pizza.jpg" class="card-img" alt="..." />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* end of new style row 2*/}
+        <div className="delivery-item-header mb-3 ">
+          <h1 className="fs-3 fs-md-2 fs-lg-1">Featured Items</h1>
+        </div>
+        {/* new style row 3 starts */}
+        <div className="row">
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-3" onClick={handleFoodClick}>
+              <div class="row no-gutters">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 p-0 m-0">
+                  <img src="card-pizza.jpg" class="card-img" alt="..." />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-3" onClick={handleFoodClick}>
+              <div class="row no-gutters">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 p-0 m-0">
+                  <img src="card-pizza.jpg" class="card-img" alt="..." />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-3" onClick={handleFoodClick}>
+              <div class="row no-gutters">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 p-0 m-0">
+                  <img src="card-pizza.jpg" class="card-img" alt="..." />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-3" onClick={handleFoodClick}>
+              <div class="row no-gutters">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 p-0 m-0">
+                  <img src="card-pizza.jpg" class="card-img" alt="..." />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* end of new style */}
-
-        {/* card of features items items are startede */}
-        <div className="featured-items mb-5">
-          <div className="row">
-            <div className="delivery-item-header ">
-              <h1 className="fs-3 fs-md-2 fs-lg-1">Feature Items</h1>
-            </div>
-            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12">
-              <div class="restaurant-card ">
-                <div class="image">
-                  <img
-                    src="card-soap.jpeg"
-                    onClick={handleFoodClick}
-                    closeButton
-                  />
-                </div>
-                <div class="card-inner">
-                  <div class="header">
-                    <h4>Family Food Court</h4>
-                    <h5>Fast Food</h5>
-                  </div>
-                  <div class="content ">
-                    <p className="d-flex justify-content-start align-items-center ">
-                      <span className="me-2">
-                        <CiClock2 size={24} />
-                      </span>
-                      30–45min
-                      <span className="mx-3">
-                        <RiMotorbikeFill size={24} />
-                      </span>
-                      TK 49
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12">
-              <div class="restaurant-card " onClick={handleClick}>
-                <div class="image">
-                  <img src="card-burger.jpg" />
-                </div>
-                <div class="card-inner">
-                  <div class="header">
-                    <h4>Family Food Court</h4>
-                    <h5>Fast Food</h5>
-                  </div>
-                  <div class="content ">
-                    <p className="d-flex justify-content-start align-items-center ">
-                      <span className="me-2">
-                        <CiClock2 size={24} />
-                      </span>
-                      30–45min
-                      <span className="mx-3">
-                        <RiMotorbikeFill size={24} />
-                      </span>
-                      TK 49
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12">
-              <div class="restaurant-card " onClick={handleClick}>
-                <div class="image">
-                  <img src="card-fries2.jpeg" />
-                </div>
-                <div class="card-inner">
-                  <div class="header">
-                    <h4>Family Food Court</h4>
-                    <h5>Fast Food</h5>
-                  </div>
-                  <div class="content ">
-                    <p className="d-flex justify-content-start align-items-center ">
-                      <span className="me-2">
-                        <CiClock2 size={24} />
-                      </span>
-                      30–45min
-                      <span className="mx-3">
-                        <RiMotorbikeFill size={24} />
-                      </span>
-                      TK 49
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12">
-              <div class="restaurant-card " onClick={handleClick}>
-                <div class="image">
-                  <img src="card-soap.jpeg" />
-                </div>
-                <div class="card-inner">
-                  <div class="header">
-                    <h4>Family Food Court</h4>
-                    <h5>Fast Food</h5>
-                  </div>
-                  <div class="content ">
-                    <p className="d-flex justify-content-start align-items-center ">
-                      <span className="me-2">
-                        <CiClock2 size={24} />
-                      </span>
-                      30–45min
-                      <span className="mx-3">
-                        <RiMotorbikeFill size={24} />
-                      </span>
-                      TK 49
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* featured item ended*/}
-        {/* New Arrival started */}
-        <div className="featured-items mb-5">
-          <div className="row">
-            <div className="delivery-item-header ">
-              <h1 className="fs-3 fs-md-2 fs-lg-1">New Arrival Items</h1>
-            </div>
-            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12">
-              <div class="restaurant-card ">
-                <div class="image" onClick={handleClick}>
-                  <img src="card-soap.jpeg" />
-                </div>
-                <div class="card-inner">
-                  <div class="header">
-                    <h4>Family Food Court</h4>
-                    <h5>Fast Food</h5>
-                  </div>
-                  <div class="content ">
-                    <p className="d-flex justify-content-start align-items-center ">
-                      <span className="me-2">
-                        <CiClock2 size={24} />
-                      </span>
-                      30–45min
-                      <span className="mx-3">
-                        <RiMotorbikeFill size={24} />
-                      </span>
-                      TK 49
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12">
-              <div class="restaurant-card " onClick={handleClick}>
-                <div class="image">
-                  <img src="card-burger.jpg" />
-                </div>
-                <div class="card-inner">
-                  <div class="header">
-                    <h4>Family Food Court</h4>
-                    <h5>Fast Food</h5>
-                  </div>
-                  <div class="content ">
-                    <p className="d-flex justify-content-start align-items-center ">
-                      <span className="me-2">
-                        <CiClock2 size={24} />
-                      </span>
-                      30–45min
-                      <span className="mx-3">
-                        <RiMotorbikeFill size={24} />
-                      </span>
-                      TK 49
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12">
-              <div class="restaurant-card " onClick={handleClick}>
-                <div class="image">
-                  <img src="card-fries2.jpeg" />
-                </div>
-                <div class="card-inner">
-                  <div class="header">
-                    <h4>Family Food Court</h4>
-                    <h5>Fast Food</h5>
-                  </div>
-                  <div class="content ">
-                    <p className="d-flex justify-content-start align-items-center ">
-                      <span className="me-2">
-                        <CiClock2 size={24} />
-                      </span>
-                      30–45min
-                      <span className="mx-3">
-                        <RiMotorbikeFill size={24} />
-                      </span>
-                      TK 49
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12">
-              <div class="restaurant-card " onClick={handleClick}>
-                <div class="image">
-                  <img src="card-soap.jpeg" />
-                </div>
-                <div class="card-inner">
-                  <div class="header">
-                    <h4>Family Food Court</h4>
-                    <h5>Fast Food</h5>
-                  </div>
-                  <div class="content ">
-                    <p className="d-flex justify-content-start align-items-center ">
-                      <span className="me-2">
-                        <CiClock2 size={24} />
-                      </span>
-                      30–45min
-                      <span className="mx-3">
-                        <RiMotorbikeFill size={24} />
-                      </span>
-                      TK 49
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* New Arrival ended */}
 
         <FoodModal
           show={showModal}
@@ -397,7 +298,7 @@ function RestaurantDetails() {
           food={selectedFood}
         />
       </div>
-      <div className="container">
+      <div className="container mt-5">
         <Footer />
       </div>
     </>
