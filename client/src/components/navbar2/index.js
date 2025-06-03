@@ -197,7 +197,7 @@ function Navbar() {
               {isLoggedIn ? (
                 <>
                   <li className="nav-item">
-                    <a className="nav-link" href={`/editProfile/${userId}`}>
+                    <a className="nav-link" href={`/editProfileScreen/${userId}`}>
                       Profile
                     </a>
                   </li>

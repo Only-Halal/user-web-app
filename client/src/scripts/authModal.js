@@ -7,13 +7,11 @@ import { Colors, Fonts, Sizes } from "../constants/styles.js";
 
 const countryCodes = [
   { label: "+1 (US)", value: "+1" },
-  // Add more country codes as needed
 ];
 
 const statesList = [
   { label: "Alabama", value: "AL" },
   { label: "Alaska", value: "AK" },
-  // Add all other states...
 ];
 
 const AuthModal = ({ isOpen, onClose, mode, onLoginSuccess, onChangeMode }) => {
@@ -151,7 +149,7 @@ const AuthModal = ({ isOpen, onClose, mode, onLoginSuccess, onChangeMode }) => {
     setShowPrivacyPolicy(false);
     setLoading(true);
     try {
-      const response = await fetch(`${app_url}/resetPasswordOTP`, {
+      const response = await fetch(`${app_url}/sendOTP`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -160,7 +158,7 @@ const AuthModal = ({ isOpen, onClose, mode, onLoginSuccess, onChangeMode }) => {
       });
       const data = await response.json();
       if (data.success) {
-        setGetOtp(data.otp);
+        setGetOtp(data.otp.toString());
         setShowOtpInput(true);
       } else {
         setError(data.message || "Failed to send OTP");
@@ -174,6 +172,8 @@ const AuthModal = ({ isOpen, onClose, mode, onLoginSuccess, onChangeMode }) => {
 
   const handleOtpSubmit = async (e) => {
     e.preventDefault();
+    console.log('Entered OTP:', otp);
+  console.log('Stored OTP:', getOtp);
     setError("");
     setSuccess("");
     setLoading(true);
