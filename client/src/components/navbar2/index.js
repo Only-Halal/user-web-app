@@ -6,6 +6,8 @@ import {
   faPhone,
   faShoppingCart,
   faMagnifyingGlass,
+  faUser,
+  faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
 import AuthModal from "../../scripts/authModal.js";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +17,7 @@ function Navbar() {
   const [modalMode, setModalMode] = useState("login");
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
   const [userId, setUserId] = useState(localStorage.getItem("userId") || null);
+  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const navigate = useNavigate();
 
   // Check auth status on component mount
@@ -47,11 +50,15 @@ function Navbar() {
     localStorage.removeItem("userId");
     setIsLoggedIn(false);
     setUserId(null);
-    navigate("/"); // Redirect to home after logout
+    navigate("/");
   };
 
   const handleChangeMode = (newMode) => {
     setModalMode(newMode);
+  };
+
+  const toggleProfileDropdown = () => {
+    setShowProfileDropdown(!showProfileDropdown);
   };
 
   const navItems = [
@@ -195,21 +202,58 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               {isLoggedIn ? (
-                <>
-                  <li className="nav-item">
-                    <a className="nav-link" href={`/editProfileScreen/${userId}`}>
-                      Profile
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <button
-                      className="nav-link btn btn-pink"
-                      onClick={handleLogout}
-                    >
-                      Log out
-                    </button>
-                  </li>
-                </>
+                <li
+                  className="nav-item dropdown"
+                  onMouseEnter={() => setShowProfileDropdown(true)}
+                  onMouseLeave={() => setShowProfileDropdown(false)}
+                >
+                  <a
+                    className="nav-link dropdown-toggle d-flex align-items-center"
+                    href="#"
+                    id="profileDropdown"
+                    role="button"
+                    aria-expanded={showProfileDropdown}
+                  >
+                    <FontAwesomeIcon icon={faUser} className="me-1" />
+                    Profile
+                    <FontAwesomeIcon icon={faCaretDown} className="ms-1" />
+                  </a>
+                  <ul
+                    className={`dropdown-menu ${
+                      showProfileDropdown ? "show" : ""
+                    }`}
+                    aria-labelledby="profileDropdown"
+                    style={{
+                      position: "absolute",
+                      right: 0,
+                      left: "auto",
+                    }}
+                  >
+                    <li>
+                      <a className="dropdown-item" href="/editProfileScreen">
+                        Edit Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="/orders">
+                        My Orders
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="/wishlist">
+                        Wishlist
+                      </a>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <button className="dropdown-item" onClick={handleLogout}>
+                        Logout
+                      </button>
+                    </li>
+                  </ul>
+                </li>
               ) : (
                 <>
                   <li className="nav-item">

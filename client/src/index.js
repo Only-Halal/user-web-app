@@ -36,7 +36,7 @@ root.render(
 
           <Route path="/searchpage" element={<SearchPage />} />
 
-          <Route path="/editProfileScreen/:userId" element={<EditProfileScreen />} />
+          <Route path="/editProfileScreen" element={<EditProfileScreen />} />
 
           <Route path="/deliveries" element={<Deliveries />} />
 

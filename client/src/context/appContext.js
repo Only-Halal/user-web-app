@@ -94,7 +94,7 @@ export const AppProvider = ({ children }) => {
     if (Notification.permission === "granted") {
       new Notification(title, { body });
     } else if (Notification.permission !== "denied") {
-      Notification.requestPermission().then(permission => {
+      Notification.requestPermission().then((permission) => {
         if (permission === "granted") {
           new Notification(title, { body });
         }
@@ -224,7 +224,7 @@ export const AppProvider = ({ children }) => {
           });
           userLoc = {
             lat: position.coords.latitude,
-            lng: position.coords.longitude
+            lng: position.coords.longitude,
           };
         }
       }
@@ -261,34 +261,34 @@ export const AppProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   const newSocket = io.connect(`${app_url}`, {
-  //     path: "/socket.io",
-  //     transports: ["websocket"],
-  //   });
-  //   setSocket(newSocket);
-  //   newSocket.on("connect", () => {
-  //     console.log("User App Connected to WebSocket server");
-  //   });
+  useEffect(() => {
+    const newSocket = io.connect(`${app_url}`, {
+      path: "/socket.io",
+      transports: ["websocket"],
+    });
+    setSocket(newSocket);
+    newSocket.on("connect", () => {
+      console.log("User App Connected to WebSocket server");
+    });
 
-  //   newSocket.on("orderNoti", (data) => {
-  //     showNotification(data.title, data.message);
-  //     setIsOrderNotification(true);
-  //   });
+    newSocket.on("orderNoti", (data) => {
+      showNotification(data.title, data.message);
+      setIsOrderNotification(true);
+    });
 
-  //   newSocket.on("showNoti", (data) => {
-  //     showNotification(data.title, data.message);
-  //     setIsPromo(true);
-  //   });
+    newSocket.on("showNoti", (data) => {
+      showNotification(data.title, data.message);
+      setIsPromo(true);
+    });
 
-  //   newSocket.on("disconnect", () => {
-  //     console.log("User App Disconnected from WebSocket server");
-  //   });
+    newSocket.on("disconnect", () => {
+      console.log("User App Disconnected from WebSocket server");
+    });
 
-  //   return () => {
-  //     newSocket.disconnect();
-  //   };
-  // }, []);
+    return () => {
+      newSocket.disconnect();
+    };
+  }, []);
 
   // useEffect(() => {
   //   const newSocket = io.connect(chat_url.split("/support")[0], {

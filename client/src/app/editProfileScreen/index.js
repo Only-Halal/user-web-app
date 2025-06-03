@@ -14,7 +14,7 @@ import {
 import { AppContext } from "../../context/appContext";
 import { statesList, stateZipRanges } from "../../components/states";
 import { app_url } from "../../url";
-import Header from "../../components/header"; 
+import Header from "../../components/header";
 import "../../styles/EditProfileScreen.css";
 
 const EditProfileScreen = () => {
@@ -22,12 +22,12 @@ const EditProfileScreen = () => {
   const [loading, setLoading] = useState(true);
   const [userId, setUserId] = useState(localStorage.getItem("userId") || null);
   const [userData, setUserData] = useState({
-    username: '',
-    email: '',
-    phone: '',
-    state: '',
-    city: '',
-    zipcode: '',
+    username: "",
+    email: "",
+    phone: "",
+    state: "",
+    city: "",
+    zipcode: "",
     currentPassword: "",
   });
   const [newPassword, setNewPassword] = useState("");
@@ -41,50 +41,56 @@ const EditProfileScreen = () => {
   });
 
   useEffect(() => {
-  const fetchUserData = async () => {
-    try {
-      const response = await fetch(`${app_url}/getUserData/${userId}`, { 
-        headers: {
-          Authorization: `Bearer ${authToken}`,
-        },
-      });
-      const result = await response.json();
-      
-      if (result.success && result.user) {
-        setUserData({
-          username: result.user.username || '',
-          email: result.user.email || '',
-          phone: result.user.phone || '',
-          state: result.user.state || '',
-          city: result.user.city || '',
-          zipcode: result.user.zipcode || '',
-          currentPassword: "",
-        });
-        console.log('result', result);
+    const fetchUserData = async () => {
+      if (!userId || !authToken) {
+        console.error("Missing userId or authToken");
         setLoading(false);
-      } else {
+        return;
+      }
+
+      try {
+        console.log("Fetching user data for userId:", userId);
+        const response = await fetch(`${app_url}/getUserData/${userId}`, {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        console.log("API Response:", result);
+
+        if (result.success && result.user) {
+          console.log("User data:", result.user);
+          setUserData({
+            username: result.user.username || "",
+            email: result.user.email || "",
+            phone: result.user.phone || "",
+            state: result.user.state || "",
+            city: result.user.city || "",
+            zipcode: result.user.zipcode || "",
+            currentPassword: "",
+          });
+        } else {
+          throw new Error(result.message || "Failed to fetch user data");
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
         setSnackbar({
           open: true,
-          message: result.message || "Failed to fetch user data",
+          message: error.message || "Error fetching user data",
           severity: "error",
         });
+      } finally {
         setLoading(false);
       }
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-      setSnackbar({
-        open: true,
-        message: "Error fetching user data",
-        severity: "error",
-      });
-      setLoading(false);
-    }
-  };
+    };
 
-  if (userId && authToken) {
     fetchUserData();
-  }
-}, [userId, authToken]);
+  }, [userId, authToken]);
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prev) => !prev);
@@ -101,7 +107,7 @@ const EditProfileScreen = () => {
     }
 
     try {
-      const updateUser = await fetch(`${app_url}/updateUser/${userId}`, {
+      const response = await fetch(`${app_url}/updateUser/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -115,54 +121,44 @@ const EditProfileScreen = () => {
           zipcode: userData.zipcode,
           ...(isPasswordVisible && {
             currentPassword: userData.currentPassword,
-            newPassword: newPassword,
-            confirmPassword: confirmPassword,
+            newPassword,
+            confirmPassword,
           }),
         }),
       });
 
-      const result = await updateUser.json();
+      const result = await response.json();
+      console.log("Update result:", result);
 
       if (result.success) {
         setData((prevData) => ({
           ...prevData,
           user: {
             ...prevData.user,
-            username: userData.username,
-            phone: userData.phone,
-            state: userData.state,
-            city: userData.city,
-            zipcode: userData.zipcode,
+            ...userData,
           },
         }));
-        
+
         setSnackbar({
           open: true,
           message: result.message || "Profile updated successfully",
           severity: "success",
         });
       } else {
-        setSnackbar({
-          open: true,
-          message: result.message || "Failed to update profile",
-          severity: "error",
-        });
+        throw new Error(result.message || "Failed to update profile");
       }
     } catch (error) {
       console.error("Error updating profile:", error);
       setSnackbar({
         open: true,
-        message: "An error occurred. Please try again.",
+        message: error.message || "An error occurred. Please try again.",
         severity: "error",
       });
     }
   };
 
   const handleChange = (field, value) => {
-    setUserData((prevData) => ({
-      ...prevData,
-      [field]: value,
-    }));
+    setUserData((prev) => ({ ...prev, [field]: value }));
   };
 
   const isValidUSZip = (zip) => {
@@ -175,24 +171,14 @@ const EditProfileScreen = () => {
   const handleZipChange = (text) => {
     const cleaned = text.replace(/[^0-9]/g, "");
     handleChange("zipcode", cleaned);
-    if (cleaned.length === 5) {
-      if (isValidUSZip(cleaned)) {
-        setZipError(null);
-      } else {
-        setZipError("Invalid ZIP code");
-      }
-    } else {
-      setZipError(null);
-    }
+    setZipError(
+      cleaned.length === 5 && !isValidUSZip(cleaned) ? "Invalid ZIP code" : null
+    );
   };
 
   const handleCloseSnackbar = () => {
-    setSnackbar({ ...snackbar, open: false });
+    setSnackbar((prev) => ({ ...prev, open: false }));
   };
-
-  // if (loading) {
-  //   return <div>Loading user data...</div>;
-  // }
 
   return (
     <>
@@ -206,7 +192,6 @@ const EditProfileScreen = () => {
               fullWidth
               value={userData.username}
               onChange={(e) => handleChange("username", e.target.value)}
-              InputProps={{ style: { fontFamily: "Roboto, sans-serif" } }}
             />
           </Box>
           <Box className="input-group">
@@ -216,9 +201,6 @@ const EditProfileScreen = () => {
               fullWidth
               value={userData.email}
               disabled
-              InputProps={{
-                style: { fontFamily: "Roboto, sans-serif", color: "#666" },
-              }}
             />
           </Box>
           <Box className="input-group">
@@ -228,16 +210,10 @@ const EditProfileScreen = () => {
               fullWidth
               value={userData.phone}
               onChange={(e) => {
-                let sanitizedText = e.target.value.replace(/[^0-9+]/g, "");
-                if (sanitizedText.length > 0 && sanitizedText[0] === "1") {
-                  sanitizedText = sanitizedText.slice(1);
-                }
-                if (sanitizedText.length > 12) {
-                  sanitizedText = sanitizedText.slice(0, 12);
-                }
-                handleChange("phone", sanitizedText);
+                let sanitized = e.target.value.replace(/[^0-9+]/g, "");
+                if (sanitized.startsWith("1")) sanitized = sanitized.slice(1);
+                handleChange("phone", sanitized.slice(0, 12));
               }}
-              InputProps={{ style: { fontFamily: "Roboto, sans-serif" } }}
             />
           </Box>
           <Box className="input-group">
@@ -247,7 +223,6 @@ const EditProfileScreen = () => {
                 label="State"
                 value={userData.state}
                 onChange={(e) => handleChange("state", e.target.value)}
-                style={{ fontFamily: "Roboto, sans-serif" }}
               >
                 {statesList.map((state) => (
                   <MenuItem key={state.value} value={state.value}>
@@ -264,7 +239,6 @@ const EditProfileScreen = () => {
               fullWidth
               value={userData.city}
               onChange={(e) => handleChange("city", e.target.value)}
-              InputProps={{ style: { fontFamily: "Roboto, sans-serif" } }}
             />
           </Box>
           <Box className="input-group">
@@ -277,10 +251,11 @@ const EditProfileScreen = () => {
               inputProps={{ maxLength: 5 }}
               error={!!zipError}
               helperText={zipError}
-              InputProps={{ style: { fontFamily: "Roboto, sans-serif" } }}
             />
           </Box>
+
           <Box className="separator" />
+
           {isPasswordVisible && (
             <>
               <Box className="input-group">
@@ -290,8 +265,9 @@ const EditProfileScreen = () => {
                   fullWidth
                   type="password"
                   value={userData.currentPassword}
-                  onChange={(e) => handleChange("currentPassword", e.target.value)}
-                  InputProps={{ style: { fontFamily: "Roboto, sans-serif" } }}
+                  onChange={(e) =>
+                    handleChange("currentPassword", e.target.value)
+                  }
                 />
               </Box>
               <Box className="input-group">
@@ -302,7 +278,6 @@ const EditProfileScreen = () => {
                   type="password"
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
-                  InputProps={{ style: { fontFamily: "Roboto, sans-serif" } }}
                 />
               </Box>
               <Box className="input-group">
@@ -313,11 +288,11 @@ const EditProfileScreen = () => {
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  InputProps={{ style: { fontFamily: "Roboto, sans-serif" } }}
                 />
               </Box>
             </>
           )}
+
           <Button
             variant="contained"
             className="change-password-button"
@@ -325,6 +300,7 @@ const EditProfileScreen = () => {
           >
             {isPasswordVisible ? "Cancel Password Change" : "Change Password"}
           </Button>
+
           <Button
             variant="contained"
             className="update-button"
@@ -333,6 +309,7 @@ const EditProfileScreen = () => {
             Update
           </Button>
         </Box>
+
         <Snackbar
           open={snackbar.open}
           autoHideDuration={3000}
