@@ -24,6 +24,7 @@ import "./styles/restaurant-details.css";
 import "./styles/modal.css"; // Import custom styles for the food modal
 
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Important for toggle functionality
+import ViewCart from "./view-cart";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -45,6 +46,7 @@ root.render(
 
         <Route path="/restaurant-details" element={<RestaurantDetails />} />
         {/* Route for the AboutPage */}
+        <Route path="/view-cart" element={<ViewCart />} />
       </Routes>
     </Router>
   </React.StrictMode>

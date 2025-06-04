@@ -2,8 +2,8 @@ import React from "react";
 function Navbar() {
   return (
     // navbar div start
-    <div className="container-fluid nav-div d-flex align-items-center sticky-top">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light custom-nav  container">
+    <div className="container-fluid nav-div d-flex align-items-center ">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light custom-nav sticky-top container">
         <a class="navbar-brand" href="#">
           <img
             src="/logo.webp"

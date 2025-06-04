@@ -10,6 +10,7 @@ import { RiMotorbikeFill } from "react-icons/ri";
 import Footer from "../../components/footer";
 import { useState } from "react";
 import FoodModal from "../../components/modal";
+import Navbar from "../../components/navbar2";
 
 const foodList = [
   {
@@ -43,6 +44,7 @@ function RestaurantDetails() {
   };
   return (
     <>
+      <Navbar />
       <div className="container">
         <div className="restaurant-details-banner w-100">
           <img src="restaurant-banner.jpeg " className="img-fluid" />
