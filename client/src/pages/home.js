@@ -1,28 +1,22 @@
 import React from "react";
 
-import { useEffect, useState } from "react";
-import { useRef } from "react";
-import Navbar from "../../components/navbar2";
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { PiClockCountdownFill } from "react-icons/pi";
 import { FaMobileAlt } from "react-icons/fa";
 import { PiMapPinSimpleAreaBold } from "react-icons/pi";
 import { FaCity } from "react-icons/fa";
 import { FaRegEnvelope } from "react-icons/fa";
-import Slider from "../../components/slider"; //importing slider components
-import Cards from "../../components/cards";
-import Footer from "../../components/footer-home";
+import Slider from "../components/slider";
+import Cards from "../components/cards";
 
 function HomePage() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const navigate = useNavigate();
   return (
     <>
-      <Navbar />
       <div className="container-fluid main-div">
         <div className="inner-div container">
-          {/* <div className="eclips-div"> </div> */}
-
-          {/* Content here if any */}
-
           <div className="row">
             <div
               className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex align-items-center"
@@ -41,7 +35,11 @@ function HomePage() {
                   nunc ex, gravida vel porttitor et, pretium ac sapien.
                 </p>
 
-                <button className="btn btn-warning rounded read-more-btn mt-5">
+                <button
+                  navigate
+                  onClick={() => navigate("/deliveries")}
+                  className="btn btn-warning rounded read-more-btn mt-5"
+                >
                   Read More
                 </button>
               </div>

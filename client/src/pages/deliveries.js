@@ -1,20 +1,16 @@
 import React, { Component } from "react";
-import Navbar from "../../components/navbar2";
-import Footer from "../../components/footer";
-import "../../styles/footer.css";
-import Card from "../../components/filter-btn";
+import Footer from "../components/footer";
+import "../styles/footer.css";
+import Card from "../components/filter-btn";
 import { MdWidthFull } from "react-icons/md";
 import { CiClock2 } from "react-icons/ci";
 import { RiMotorbikeFill } from "react-icons/ri";
-import Restaurants from "../../components/restaurants";
+import Restaurants from "../components/restaurants";
 function Deliveries() {
   return (
     <>
-      <Navbar />
       <div className="container-fluid main-div">
         <div className="inner-div container">
-          {/* <div className="eclips-div"> </div> */}
-          {/* Content here if any */}
           <div className="row">
             <div
               className="col-xl-6 col-lg-6 col-md-12 col-sm-4 col-12 d-flex align-items-center"
@@ -45,7 +41,6 @@ function Deliveries() {
             </div>
           </div>
         </div>
-        {/* custom shape divider start*/}
         <div class="custom-shape-divider-bottom-1746805622">
           <svg
             data-name="Layer 1"
@@ -59,30 +54,11 @@ function Deliveries() {
             ></path>
           </svg>
         </div>
-        {/* custom shape ended */}
       </div>
       <Card />
-      {/* ul li of city */}
-      {/* <div class="container-fluid bg-white shadow-sm sticky-top py-2 z-3">
-        <div class="row justify-content-center">
-          <div class="col-auto">
-            <button class="btn btn-outline-warning mx-2">Price</button>
-            <button class="btn btn-outline-warning mx-2">Cousin</button>
-            <button class="btn btn-outline-warning mx-2">Dine In</button>
-            <button class="btn btn-outline-warning mx-2">Fries</button>
-            <button class="btn btn-outline-warning mx-2">Drinks</button>
-            <button class="btn btn-outline-warning mx-2">
-              How to only halal
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      */}
-      {/* alternate button */}
-      {/* card section starts here  */}
+
       <Restaurants />
-      {/* card section ended here */}
+
       <div className="main-footer">
         <div className=" container call-container d-flex justify-content-center mb-5">
           <div className="call-img">

@@ -1,19 +1,21 @@
 import React from "react";
+import logoOrange from "../assets/logoOrange.png";
+import { Button, Box } from "@mui/material";
+
 function Navbar() {
   return (
-    // navbar div start
     <div className="container-fluid nav-div d-flex align-items-center ">
       <nav className="navbar navbar-expand-lg navbar-light bg-light custom-nav sticky-top container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <img
-            src="/logo.webp"
+            src={logoOrange}
             alt="Logo"
             className="img-fluid"
-            style={{ height: "auto", width: "200px" }}
+            style={{ height: "auto", width: "220px" }}
           />
         </a>
         <div
-          class="d-lg-none ms-auto  me-3"
+          class="d-lg-none ms-auto me-3"
           style={{ backgroundColor: "white" }}
         >
           <button
@@ -130,23 +132,41 @@ function Navbar() {
               +1 234 567 890
             </span>
           </span>
-          <a
-            href="#"
-            className="nav-link  nav-right-text me-5 d-none d-lg-flex"
+          <Button
+            variant="text"
+            color="inherit"
+            sx={{
+              fontWeight: 500,
+              textTransform: "none",
+              "&:hover": {
+                color: "#F7B614",
+              },
+            }}
           >
-            <i class="fas fa-user"></i>
-          </a>
-          <a href="#" class="nav-link nav-right-text me-5 d-none d-lg-flex ">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-          <a href="#" class="nav-link nav-right-text d-none d-lg-flex ">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </a>
+            Login
+          </Button>
+          <Button
+            variant="contained"
+            color="#F7B614"
+            sx={{
+              textTransform: "none",
+              fontWeight: 500,
+              boxShadow: "none",
+              borderRadius: 2,
+              px: 2.5,
+              backgroundColor: "#F7B614",
+              color: "#000",
+              "&:hover": {
+                backgroundColor: "#e4a90d",
+              },
+            }}
+          >
+            Sign Up
+          </Button>
         </div>
       </nav>
     </div>
-    // navbar-div end
   );
 }
 
-export default Navbar; // Correct way to export the component
+export default Navbar;

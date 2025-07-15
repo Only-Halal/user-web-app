@@ -1,5 +1,5 @@
 import React from "react";
-import { PiHamburger } from "react-icons/pi"; // Fixed PiHamburger icon import
+import { PiHamburger } from "react-icons/pi";
 import { CiPizza } from "react-icons/ci";
 import { TbBowlSpoon } from "react-icons/tb";
 import { GiMeatCleaver } from "react-icons/gi";
@@ -10,14 +10,12 @@ function Cards() {
       <div className="cards-home">
         <div className="container my-5">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            {/* Card 1 */}
             <div className="col">
               <div
                 className="card p-3 shadow-sm rounded"
-                style={{ backgroundColor: "#f2efe6" }} // Ensure rounded corners
+                style={{ backgroundColor: "#f2efe6" }}
               >
                 <div className="d-flex align-items-center">
-                  {/* Icon in circle */}
                   <div
                     className="d-flex justify-content-center align-items-center me-3"
                     style={{
@@ -30,7 +28,6 @@ function Cards() {
                     <PiHamburger size={40} color="#282932" />
                   </div>
 
-                  {/* Title */}
                   <div>
                     <h5 className="mb-0">React Card Title</h5>
                   </div>
@@ -38,14 +35,12 @@ function Cards() {
               </div>
             </div>
 
-            {/* Card 2 */}
             <div className="col">
               <div
                 className="card p-3 shadow-sm rounded"
-                style={{ backgroundColor: "#f2efe6" }} // Ensure rounded corners
+                style={{ backgroundColor: "#f2efe6" }}
               >
                 <div className="d-flex align-items-center">
-                  {/* Icon in circle */}
                   <div
                     className="d-flex justify-content-center align-items-center me-3"
                     style={{
@@ -58,7 +53,6 @@ function Cards() {
                     <CiPizza size={40} color="#282932" />
                   </div>
 
-                  {/* Title */}
                   <div>
                     <h5 className="mb-0">React Card Title</h5>
                   </div>
@@ -66,14 +60,12 @@ function Cards() {
               </div>
             </div>
 
-            {/* Card 3 */}
             <div className="col">
               <div
                 className="card p-3 shadow-sm rounded"
-                style={{ backgroundColor: "#f2efe6" }} // Ensure rounded corners
+                style={{ backgroundColor: "#f2efe6" }}
               >
                 <div className="d-flex align-items-center">
-                  {/* Icon in circle */}
                   <div
                     className="d-flex justify-content-center align-items-center me-3"
                     style={{
@@ -86,7 +78,6 @@ function Cards() {
                     <TbBowlSpoon size={40} color="#282932" />
                   </div>
 
-                  {/* Title */}
                   <div>
                     <h5 className="mb-0">React Card Title</h5>
                   </div>
@@ -94,14 +85,12 @@ function Cards() {
               </div>
             </div>
 
-            {/* Card 4 */}
             <div className="col">
               <div
                 className="card p-3 shadow-sm rounded"
-                style={{ backgroundColor: "#f2efe6" }} // Ensure rounded corners
+                style={{ backgroundColor: "#f2efe6" }}
               >
                 <div className="d-flex align-items-center">
-                  {/* Icon in circle */}
                   <div
                     className="d-flex justify-content-center align-items-center me-3"
                     style={{
@@ -114,21 +103,18 @@ function Cards() {
                     <GiMeatCleaver size={40} color="#282932" />
                   </div>
 
-                  {/* Title */}
                   <div>
                     <h5 className="mb-0">React Card Title</h5>
                   </div>
                 </div>
               </div>
             </div>
-            {/* card 5 */}
             <div className="col">
               <div
                 className="card p-3 shadow-sm rounded"
-                style={{ backgroundColor: "#f2efe6" }} // Ensure rounded corners
+                style={{ backgroundColor: "#f2efe6" }}
               >
                 <div className="d-flex align-items-center">
-                  {/* Icon in circle */}
                   <div
                     className="d-flex justify-content-center align-items-center me-3"
                     style={{
@@ -141,7 +127,6 @@ function Cards() {
                     <GiMeatCleaver size={40} color="#282932" />
                   </div>
 
-                  {/* Title */}
                   <div>
                     <h5 className="mb-0">React Card Title</h5>
                   </div>

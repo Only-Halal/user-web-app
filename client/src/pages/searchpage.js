@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import React from "react";
-import Navbar from "../../components/navbar";
 
 import { FaFacebookF, FaInstagram } from "react-icons/fa6";
 import { IoLogoLinkedin } from "react-icons/io5";
@@ -31,8 +30,6 @@ function SearchPage() {
   }, []);
   return (
     <>
-      <Navbar />
-
       <div
         className="container-fluid banner"
         style={{ backgroundColor: "#F0F2F2" }}

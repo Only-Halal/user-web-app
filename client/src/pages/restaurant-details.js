@@ -7,10 +7,9 @@ import { PiHamburger } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 import { CiClock2 } from "react-icons/ci";
 import { RiMotorbikeFill } from "react-icons/ri";
-import Footer from "../../components/footer";
+import Footer from "../components/footer";
 import { useState } from "react";
-import FoodModal from "../../components/modal";
-import Navbar from "../../components/navbar2";
+import FoodModal from "../components/modal";
 
 const foodList = [
   {
@@ -44,7 +43,6 @@ function RestaurantDetails() {
   };
   return (
     <>
-      <Navbar />
       <div className="container">
         <div className="restaurant-details-banner w-100">
           <img src="restaurant-banner.jpeg " className="img-fluid" />

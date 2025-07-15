@@ -4,8 +4,9 @@ const bcrypt = require("bcrypt");
 // const Stripe = require("stripe");
 const axios = require("axios");
 const jwt = require("jsonwebtoken");
-// const jwtSecret = process.env.JWT_SECRET;0
+// const jwtSecret = process.env.JWT_SECRET;
 // const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+
 const userLogin = async (req, res) => {
   const { email, password } = req.body;
   try {
