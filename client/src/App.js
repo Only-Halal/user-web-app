@@ -7,7 +7,7 @@ import SearchPage from "./pages/searchpage";
 import LoginPage from "./pages/login";
 import HomePage from "./pages/home";
 import Deliveries from "./pages/deliveries";
-import RestaurantDetails from "./pages/restaurant-details";
+import RestaurantMenu from "./pages/restaurantMenu";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -20,11 +20,12 @@ import "./styles/slider.css";
 import "./styles/footer.css";
 import "./styles/deliveries.css";
 import "./styles/filter-btn.css";
-import "./styles/restaurant-details.css";
+import "./styles/restaurantMenu.css";
 import "./styles/modal.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import ViewCart from "./view-cart";
 import Navbar from "./components/navbar2";
+import Footer from "./components/footer";
 
 const App = () => {
   return (
@@ -35,7 +36,7 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/searchpage" element={<SearchPage />} />
           <Route path="/deliveries" element={<Deliveries />} />
-          <Route path="/restaurant-details" element={<RestaurantDetails />} />
+          <Route path="/restaurantMenu" element={<RestaurantMenu />} />
           <Route path="/view-cart" element={<ViewCart />} />
         </>
         <>
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="*" element={<HomePage />} />
         </>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

@@ -7,7 +7,6 @@ import { PiHamburger } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 import { CiClock2 } from "react-icons/ci";
 import { RiMotorbikeFill } from "react-icons/ri";
-import Footer from "../components/footer";
 import { useState } from "react";
 import FoodModal from "../components/modal";
 
@@ -28,7 +27,7 @@ const foodList = [
   },
 ];
 
-function RestaurantDetails() {
+function RestaurantMenu() {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/restaurant-details");
@@ -43,31 +42,32 @@ function RestaurantDetails() {
   };
   return (
     <>
-      <div className="container">
-        <div className="restaurant-details-banner w-100">
-          <img src="restaurant-banner.jpeg " className="img-fluid" />
-        </div>
-        <div className="restaurant-content d-flex align-items-center justify-content-between flex-column flex-md-row">
-          {/* restaurant text area started */}
-
-          <div className="restaurant-text mt-3 mb-3">
-            <h1 className="fs-3 fs-md-2 fs-lg-1">McDonald's Großbeeren Str.</h1>
-            <p className="fs-6 fs-md-5 ">
-              4.4{" "}
-              <span>
-                <IoStarSharp />
-              </span>
-              (1,500+) (1,500+) • Burgers • American • Info
-            </p>
-            <p className="fs-6 fs-md-5 ">Tap for hours, info, and more</p>
-            <p className="fs-6 fs-md-5 ">
-              Großbeerenstr. 22, Berlin, EMEA 12107
-            </p>
+      <div className="container mt-4">
+        <div className="restaurant-details-banner row">
+          <div className="col-2">
+            <img src="restaurant-banner.jpeg " className="img-fluid" />
           </div>
-          {/* restaurant text area ended  */}
-          {/* restaurant content delivery btns started */}
 
-          <div className="restaurant-content-btns">
+          <div className="col-4 d-flex align-items-center justify-content-between flex-column flex-md-row">
+            <div className="restaurant-text mt-3 mb-3">
+              <h1 className="fs-3 fs-md-2 fs-lg-1">
+                McDonald's Großbeeren Str.
+              </h1>
+              <p className="fs-6 fs-md-5 ">
+                4.4{" "}
+                <span>
+                  <IoStarSharp />
+                </span>
+                (1,500+) (1,500+) • Burgers • American • Info
+              </p>
+              <p className="fs-6 fs-md-5 ">Tap for hours, info, and more</p>
+              <p className="fs-6 fs-md-5 ">
+                Großbeerenstr. 22, Berlin, EMEA 12107
+              </p>
+            </div>
+          </div>
+
+          <div className="col-4">
             <button type="button" className="btn btn-warning me-2 rounded-5">
               <FaTruck className="me-2" />
               Delivery
@@ -82,6 +82,7 @@ function RestaurantDetails() {
             </button>
           </div>
         </div>
+
         {/* adress map section started */}
         <div className="container border border-1 rounded-5 mt-3 mb-5">
           <div className="row d-flex align-items-center justify-content-between flex-column flex-md-row">
@@ -298,11 +299,9 @@ function RestaurantDetails() {
           food={selectedFood}
         />
       </div>
-      <div className="container mt-5">
-        <Footer />
-      </div>
+      <div className="container mt-5"></div>
     </>
   );
 }
 
-export default RestaurantDetails;
+export default RestaurantMenu;
