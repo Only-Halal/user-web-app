@@ -6,183 +6,48 @@ import { GiMeatCleaver } from "react-icons/gi";
 import { MdDeliveryDining } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
+const cardItems = [
+  { icon: <IoPricetagsOutline size="1.5em" />, title: "Price" },
+  { icon: <CiPizza size="1.7em" />, title: "Cuisine" },
+  { icon: <TbBowlSpoon size="1.7em" />, title: "Dine in" },
+  { icon: <MdDeliveryDining size="1.7em" />, title: "Restaurant Picks" },
+  { icon: <GiMeatCleaver size="1.7em" />, title: "Only Halal" },
+  { icon: <GiMeatCleaver size="1.7em" />, title: "Butcher Choice" },
+];
+
 function Cards() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/restaurant-items");
+    navigate("#");
   };
+
   return (
-    <div className="container filter-btns my-3">
-      <div className="cards-home " onClick={handleClick}>
-        <div className="container">
-          <div className="row row-cols-2 row-cols-md-6 row-cols-lg-6 g-4">
-            {/* Card 1 */}
-            <div className="col">
-              <div
-                className="card p-2 shadow-sm rounded"
-                style={{ backgroundColor: "#f2efe6" }} // Ensure rounded corners
-              >
-                <div className="filter-btn d-flex flex-column align-items-center justify-contentc-center text-center">
-                  {/* Icon in circle */}
-                  <div
-                    className="d-flex justify-content-center align-items-center "
-                    style={{
-                      backgroundColor: "#F7B614",
-                      borderRadius: "50%",
-                      width: "50px",
-                      height: "50px",
-                    }}
-                  >
-                    <IoPricetagsOutline size={30} color="#282932" />
-                  </div>
-
-                  {/* Title */}
-                  <div>
-                    <h6 className="mb-0">Price</h6>
-                  </div>
+    <div className="container my-4">
+      <div className="row row-cols-2 row-cols-md-6 g-3" onClick={handleClick}>
+        {cardItems.map((item, idx) => (
+          <div className="col" key={idx}>
+            <div
+              className="card p-3 text-center shadow-sm rounded hover-shadow"
+              style={{ backgroundColor: "#f8f6f0", cursor: "pointer" }}
+            >
+              <div className="d-flex flex-column align-items-center gap-2">
+                <div
+                  className="d-flex align-items-center justify-content-center"
+                  style={{
+                    backgroundColor: "#F7B614",
+                    borderRadius: "50%",
+                    width: "55px",
+                    height: "55px",
+                  }}
+                >
+                  {item.icon}
                 </div>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="col">
-              <div
-                className="card p-2 shadow-sm rounded"
-                style={{ backgroundColor: "#f2efe6" }} // Ensure rounded corners
-              >
-                <div className="filter-btn d-flex flex-column align-items-center justify-contentc-center text-center">
-                  {/* Icon in circle */}
-                  <div
-                    className="d-flex justify-content-center align-items-center "
-                    style={{
-                      backgroundColor: "#F7B614",
-                      borderRadius: "50%",
-                      width: "50px",
-                      height: "50px",
-                    }}
-                  >
-                    <CiPizza size={40} color="#282932" />
-                  </div>
-
-                  {/* Title */}
-                  <div>
-                    <h6 className="mb-0">Cuisine</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="col">
-              <div
-                className="card p-2 shadow-sm rounded"
-                style={{ backgroundColor: "#f2efe6" }} // Ensure rounded corners
-              >
-                <div className="filter-btn d-flex flex-column align-items-center justify-contentc-center text-center">
-                  {/* Icon in circle */}
-                  <div
-                    className="d-flex justify-content-center align-items-center "
-                    style={{
-                      backgroundColor: "#F7B614",
-                      borderRadius: "50%",
-                      width: "50px",
-                      height: "50px",
-                    }}
-                  >
-                    <TbBowlSpoon size={40} color="#282932" />
-                  </div>
-
-                  {/* Title */}
-                  <div>
-                    <h6 className="mb-0">Dine in</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 4 */}
-            <div className="col">
-              <div
-                className="card p-2 shadow-sm rounded"
-                style={{ backgroundColor: "#f2efe6" }} // Ensure rounded corners
-              >
-                <div className="filter-btn d-flex flex-column align-items-center justify-contentc-center text-center">
-                  {/* Icon in circle */}
-                  <div
-                    className="d-flex justify-content-center align-items-center "
-                    style={{
-                      backgroundColor: "#F7B614",
-                      borderRadius: "50%",
-                      width: "50px",
-                      height: "50px",
-                    }}
-                  >
-                    <MdDeliveryDining size={40} color="#282932" />
-                  </div>
-
-                  {/* Title */}
-                  <div className="text-center">
-                    <h6 className="mb-0">Restaurant Picks</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* card 5 */}
-            <div className="col">
-              <div
-                className="card p-2 shadow-sm rounded"
-                style={{ backgroundColor: "#f2efe6" }} // Ensure rounded corners
-              >
-                <div className="filter-btn d-flex flex-column align-items-center justify-contentc-center text-center">
-                  {/* Icon in circle */}
-                  <div
-                    className="d-flex justify-content-center align-items-center "
-                    style={{
-                      backgroundColor: "#F7B614",
-                      borderRadius: "50%",
-                      width: "50px",
-                      height: "50px",
-                    }}
-                  >
-                    <GiMeatCleaver size={40} color="#282932" />
-                  </div>
-
-                  {/* Title */}
-                  <div>
-                    <h6 className="mb-0">only halal</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className="card p-2 shadow-sm rounded"
-                style={{ backgroundColor: "#f2efe6" }} // Ensure rounded corners
-              >
-                <div className="filter-btn d-flex flex-column align-items-center justify-contentc-center text-center">
-                  {/* Icon in circle */}
-                  <div
-                    className="d-flex justify-content-center align-items-center "
-                    style={{
-                      backgroundColor: "#F7B614",
-                      borderRadius: "50%",
-                      width: "50px",
-                      height: "50px",
-                    }}
-                  >
-                    <GiMeatCleaver size={40} color="#282932" />
-                  </div>
-
-                  {/* Title */}
-                  <div>
-                    <h6 className="mb-0">only halal</h6>
-                  </div>
-                </div>
+                <h6 className="mb-0 text-dark">{item.title}</h6>
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

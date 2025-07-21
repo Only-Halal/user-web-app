@@ -1,306 +1,253 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoStarSharp } from "react-icons/io5";
-import { FaTruck } from "react-icons/fa";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaUsers } from "react-icons/fa";
-import { PiHamburger } from "react-icons/pi";
+import { FaTruck, FaMapMarkerAlt, FaUsers } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { CiClock2 } from "react-icons/ci";
-import { RiMotorbikeFill } from "react-icons/ri";
-import { useState } from "react";
 import FoodModal from "../components/modal";
+import cardBurger from "../assets/cardBurger.jpg";
+import cardPizza from "../assets/cardPizza.jpg";
 
 const foodList = [
   {
     id: 1,
     name: "Burger",
+    section: "Popular",
     description: "Delicious beef burger",
-    price: 5.99,
-    image: "/images/burger.jpg",
+    price: "Rs. 499",
+    image: cardBurger,
   },
   {
     id: 2,
     name: "Pizza",
+    section: "Popular",
     description: "Cheesy pepperoni pizza",
-    price: 8.99,
-    image: "/images/pizza.jpg",
+    price: "Rs. 899",
+    image: cardPizza,
   },
+  {
+    id: 3,
+    name: "Zinger Deal",
+    section: "Deals",
+    description: "Zinger + Fries + Drink",
+    price: "Rs. 699",
+    image: cardBurger,
+  },
+  {
+    id: 4,
+    name: "Chicken Biryani",
+    section: "Rice",
+    description: "Spicy chicken biryani with raita",
+    price: "Rs. 349",
+    image: cardPizza,
+  },
+  {
+    id: 5,
+    name: "Masala Fries",
+    section: "Fries",
+    description: "Crispy masala French fries",
+    price: "Rs. 199",
+    image: cardBurger,
+  },
+  {
+    id: 6,
+    name: "Lava Cake",
+    section: "More",
+    description: "Warm chocolate lava cake",
+    price: "Rs. 249",
+    image: cardPizza,
+  },
+  {
+    id: 7,
+    name: "Coca-Cola",
+    section: "Drinks",
+    description: "Chilled soft drink",
+    price: "Rs. 99",
+    image: cardBurger,
+  },
+  {
+    id: 8,
+    name: "Ice Cream Cup",
+    section: "Desserts",
+    description: "Vanilla ice cream cup",
+    price: "Rs. 149",
+    image: cardPizza,
+  },
+  {
+    id: 9,
+    name: "Family Combo",
+    section: "Combos",
+    description: "2 Burgers + Fries + 2 Drinks",
+    price: "Rs. 999",
+    image: cardBurger,
+  },
+  {
+    id: 10,
+    name: "Kids Meal",
+    section: "Kids Meal",
+    description: "Mini burger + toy",
+    price: "Rs. 399",
+    image: cardPizza,
+  },
+];
+
+const sections = [
+  "All",
+  "Popular",
+  "Deals",
+  "Rice",
+  "Fries",
+  "More",
+  "Drinks",
+  "Desserts",
+  "Combos",
+  "Kids Meal",
 ];
 
 function RestaurantMenu() {
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/restaurant-details");
-  };
-
   const [selectedFood, setSelectedFood] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [activeSection, setActiveSection] = useState("All");
 
   const handleFoodClick = (food) => {
     setSelectedFood(food);
     setShowModal(true);
   };
+
+  const filteredFood =
+    activeSection === "All"
+      ? foodList
+      : foodList.filter((food) => food.section === activeSection);
+
   return (
-    <>
-      <div className="container mt-4">
-        <div className="restaurant-details-banner row">
-          <div className="col-2">
-            <img src="restaurant-banner.jpeg " className="img-fluid" />
-          </div>
-
-          <div className="col-4 d-flex align-items-center justify-content-between flex-column flex-md-row">
-            <div className="restaurant-text mt-3 mb-3">
-              <h1 className="fs-3 fs-md-2 fs-lg-1">
-                McDonald's Großbeeren Str.
-              </h1>
-              <p className="fs-6 fs-md-5 ">
-                4.4{" "}
-                <span>
-                  <IoStarSharp />
-                </span>
-                (1,500+) (1,500+) • Burgers • American • Info
-              </p>
-              <p className="fs-6 fs-md-5 ">Tap for hours, info, and more</p>
-              <p className="fs-6 fs-md-5 ">
-                Großbeerenstr. 22, Berlin, EMEA 12107
-              </p>
-            </div>
-          </div>
-
-          <div className="col-4">
-            <button type="button" className="btn btn-warning me-2 rounded-5">
-              <FaTruck className="me-2" />
-              Delivery
-            </button>
-            <button type="button" className="btn btn-warning me-2 rounded-5">
-              <FaMapMarkerAlt className="me-2" />
-              Pickup
-            </button>
-            <button type="button" className="btn btn-warning me-0 rounded-5">
-              <FaUsers className="me-2" />
-              Group Order
-            </button>
-          </div>
+    <div className="container my-5">
+      {/* Restaurant Info */}
+      <div className="row align-items-center mb-4">
+        <div className="col-md-2">
+          <img
+            src="/restaurant-banner.jpeg"
+            className="img-fluid rounded shadow-sm"
+            alt="Restaurant"
+          />
         </div>
-
-        {/* adress map section started */}
-        <div className="container border border-1 rounded-5 mt-3 mb-5">
-          <div className="row d-flex align-items-center justify-content-between flex-column flex-md-row">
-            <div className="col-xl-8 col-lg-8 col-md-8 col-sm-8  p-0 m-0">
-              <div className="map-banner">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.608507402832!2d-73.92867492315077!3d40.726634036718345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25eb7db7ef65b%3A0xab9cb9e0dcf7106a!2sRestaurant%20Depot!5e0!3m2!1sen!2s!4v1748023180528!5m2!1sen!2s" // Replace with your real URL
-                  style={{ border: "0" }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Google Map"
-                ></iframe>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-              <div className="map-banner-text d-flex flex-row align-items-center  ">
-                <div className="map-icons d-flex flex-column me-5 ms-5  ">
-                  <FaMapMarkerAlt />
-                </div>
-                <div className="location-text border-bottom border-1">
-                  <h3>Our Location</h3>
-                  <p>Großbeerenstr. 22, Berlin, EMEA 12107</p>
-                </div>
-              </div>
-              <div className="map-banner-text d-flex flex-row align-items-center ">
-                <div className="map-icons d-flex flex-column me-5 ms-5">
-                  <FaMapMarkerAlt />
-                </div>
-                <div className="location-text">
-                  <h3>Open</h3>
-                  <p> Open Until 1: 30 PM </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="col-md-6">
+          <h3 className="fw-bold">McDonald's Großbeeren Str.</h3>
+          <p className="mb-1 text-muted">
+            4.4 <IoStarSharp className="text-warning" /> (1,500+) • Burgers •
+            American • Info
+          </p>
+          <p className="text-muted">Großbeerenstr. 22, Berlin, EMEA 12107</p>
         </div>
-        {/* new style  testing testng testing testng testng */}
-        <div className="delivery-item-header mb-3 ">
-          <h1 className="fs-3 fs-md-2 fs-lg-1">New Arrival</h1>
+        <div className="col-md-4 text-md-end mt-3 mt-md-0">
+          <button className="btn btn-warning me-2 rounded-pill">
+            <FaTruck /> Delivery
+          </button>
+          <button className="btn btn-outline-warning me-2 rounded-pill">
+            <FaMapMarkerAlt /> Pickup
+          </button>
+          <button className="btn btn-outline-secondary rounded-pill">
+            <FaUsers /> Group Order
+          </button>
         </div>
-        <div className="row">
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="card mb-3" onClick={handleFoodClick}>
-              <div class="row no-gutters">
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 m-0">
-                  <img src="card-pizza.jpg" class="card-img" alt="..." />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="card mb-3" onClick={handleFoodClick}>
-              <div class="row no-gutters">
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 m-0">
-                  <img src="card-pizza.jpg" class="card-img" alt="..." />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* new style row 2 starts */}
-
-        <div className="row">
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="card mb-3" onClick={handleFoodClick}>
-              <div class="row no-gutters">
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 m-0">
-                  <img src="card-pizza.jpg" class="card-img" alt="..." />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="card mb-3" onClick={handleFoodClick}>
-              <div class="row no-gutters">
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 m-0">
-                  <img src="card-pizza.jpg" class="card-img" alt="..." />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* end of new style row 2*/}
-        <div className="delivery-item-header mb-3 ">
-          <h1 className="fs-3 fs-md-2 fs-lg-1">Featured Items</h1>
-        </div>
-        {/* new style row 3 starts */}
-        <div className="row">
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="card mb-3" onClick={handleFoodClick}>
-              <div class="row no-gutters">
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 m-0">
-                  <img src="card-pizza.jpg" class="card-img" alt="..." />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="card mb-3" onClick={handleFoodClick}>
-              <div class="row no-gutters">
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 m-0">
-                  <img src="card-pizza.jpg" class="card-img" alt="..." />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="card mb-3" onClick={handleFoodClick}>
-              <div class="row no-gutters">
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 m-0">
-                  <img src="card-pizza.jpg" class="card-img" alt="..." />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="card mb-3" onClick={handleFoodClick}>
-              <div class="row no-gutters">
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 m-0">
-                  <img src="card-pizza.jpg" class="card-img" alt="..." />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* end of new style */}
-
-        <FoodModal
-          show={showModal}
-          onClose={() => setShowModal(false)}
-          food={selectedFood}
-        />
       </div>
-      <div className="container mt-5"></div>
-    </>
+
+      {/* Google Map */}
+      <div className="border rounded p-3 mb-5 bg-light">
+        <div className="row">
+          <div className="col-md-8">
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=..."
+              style={{ width: "100%", height: "250px", border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              className="rounded"
+            />
+          </div>
+          <div className="col-md-4 d-flex flex-column justify-content-center">
+            <h5 className="fw-semibold">Our Location</h5>
+            <p>Großbeerenstr. 22, Berlin, EMEA 12107</p>
+            <h6 className="fw-semibold text-success">Open Now</h6>
+            <p>Until 1:30 PM</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Section Tabs */}
+      <div className="mb-4">
+        <ul className="nav nav-pills flex-wrap justify-content-start gap-2">
+          {sections.map((section) => (
+            <li className="nav-item" key={section}>
+              <button
+                className={`nav-link px-4 py-2 rounded-pill ${
+                  activeSection === section
+                    ? "active"
+                    : "text-dark bg-light border"
+                }`}
+                style={{
+                  transition: "0.3s",
+                  fontWeight: activeSection === section ? "bold" : "normal",
+                  boxShadow:
+                    activeSection === section
+                      ? "0 4px 12px rgba(0,0,0,0.1)"
+                      : "none",
+                }}
+                onClick={() => setActiveSection(section)}
+              >
+                {section}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Section Heading */}
+      <h4 className="fw-bold mb-4 border-bottom pb-2">
+        {activeSection === "All" ? "All Items" : `${activeSection} Items`}
+      </h4>
+
+      {/* Food Cards */}
+      <div className="row">
+        {filteredFood.length === 0 ? (
+          <div className="col-12 text-center text-muted">
+            <p>No items available in this section.</p>
+          </div>
+        ) : (
+          filteredFood.map((food) => (
+            <div className="col-md-6 mb-4" key={food.id}>
+              <div
+                className="card h-100 shadow-sm border-0"
+                onClick={() => handleFoodClick(food)}
+                style={{ cursor: "pointer" }}
+              >
+                <div className="row g-0">
+                  <div className="col-8">
+                    <div className="card-body">
+                      <h5 className="card-title fw-bold">{food.name}</h5>
+                      <p className="card-text text-muted">{food.description}</p>
+                      <p className="fw-bold text-success">{food.price}</p>
+                    </div>
+                  </div>
+                  <div className="col-4">
+                    <img
+                      src={food.image}
+                      className="img-fluid h-100 object-fit-cover rounded-end"
+                      alt={food.name}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
+
+      {/* Modal */}
+      <FoodModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        food={selectedFood}
+      />
+    </div>
   );
 }
 

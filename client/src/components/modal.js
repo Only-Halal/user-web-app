@@ -1,20 +1,15 @@
-// FoodModal.js
-import React from "react";
-import { Modal, Button } from "react-bootstrap";
-import { Dropdown } from "react-bootstrap";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Modal, Button, Dropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 function FoodModal({ show, onClose, food }) {
   const [quantity, setQuantity] = useState(1);
+  const navigate = useNavigate();
+
   const increase = () => setQuantity((prev) => prev + 1);
   const decrease = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
-  const navigate = useNavigate();
-
-  const handlViewCart = () => {
-    // You can add your "add to cart" logic here
-    // Navigate to view-cart page
+  const handleViewCart = () => {
     navigate("/view-cart");
   };
 
@@ -22,121 +17,106 @@ function FoodModal({ show, onClose, food }) {
     <Modal
       show={show}
       onHide={onClose}
-      left
-      contentClassName="custom-modal-content"
-      dialogClassName="custom-modal-dialog"
-      closeButton
+      centered
       scrollable
+      size="md"
+      contentClassName="p-3"
+      dialogClassName="custom-modal"
     >
       <Modal.Header closeButton>
-        <Modal.Title>Soap</Modal.Title>
+        <Modal.Title>{food?.name || "Item"}</Modal.Title>
       </Modal.Header>
+
       <Modal.Body>
-        <div className="img-container">
-          <img src="card-soap.jpeg" className="modal-image-top" closeButton />
+        {/* Image */}
+        <div className="text-center mb-3">
+          <img
+            src={food?.image || "/placeholder.jpg"}
+            alt={food?.name}
+            className="img-fluid rounded"
+            style={{ maxHeight: "100px", objectFit: "cover" }}
+          />
         </div>
-        <p
-          className="my-2"
-          style={{
-            color: "red",
-            fontWeight: "bold",
-            fontSize: "1.5rem",
-            fontFamily: "PPAgrandir",
-          }}
-        >
-          <strong>Price:</strong> Rs. 323 Rs. 380 15% off
+
+        {/* Description */}
+        <p className="text-muted">{food?.description}</p>
+
+        {/* Price */}
+        <p className="fw-bold text-danger fs-5">
+          Price: {food?.price || "Rs. ---"}
         </p>
-        <p>Crispy chicken burger, fries & NR 345 ml Pepsi drin</p>
-        <div className="drink-section d-flex justify-content-between bg-light p-3 rounded my-2">
-          <h6>Choose Your Drink</h6>
-          <h6>Choose Your Drink</h6>
+
+        {/* Drink Option */}
+        <div className="bg-light p-3 rounded mb-3">
+          <h6 className="mb-2">Choose Your Drink</h6>
+          <Dropdown>
+            <Dropdown.Toggle
+              variant="outline-dark"
+              className="w-100 text-start"
+            >
+              Select a drink
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item>Pepsi</Dropdown.Item>
+              <Dropdown.Item>7Up</Dropdown.Item>
+              <Dropdown.Item>No Drink</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
-        <div className="special-instructions mb-3">
-          <label
-            htmlFor="specialInstructions"
-            className="form-label"
-            style={{ fontWeight: "bold", fontSize: "1.2rem" }}
-          >
+
+        {/* Special Instructions */}
+        <div className="mb-3">
+          <label htmlFor="specialInstructions" className="form-label fw-bold">
             Special instructions
           </label>
-          <p className="text-muted">
-            Special requests are subject to the restaurant's approval. Tell us
-            here!
-          </p>
           <textarea
             className="form-control"
-            id="specialInstructions"
             rows="3"
-            placeholder="Add any instructions here..."
+            placeholder="E.g. No onions, extra spicy, etc."
           ></textarea>
         </div>
 
-        {/* new div for textarea */}
-
-        <div className="special-instructions mb-3">
-          <label
-            htmlFor="specialInstructions"
-            className="form-label"
-            style={{ fontWeight: "bold", fontSize: "1.2rem" }}
-          >
+        {/* Item not available dropdown */}
+        <div className="mb-3">
+          <label className="form-label fw-bold">
             If this item is not available
           </label>
-
-          <Dropdown drop="down">
+          <Dropdown>
             <Dropdown.Toggle
-              variant="warning"
-              id="dropdown-basic"
-              style={{
-                width: "100%",
-                backgroundColor: "white",
-                outline: "black",
-                border: "1px solid lightgray",
-                color: "black",
-              }}
+              variant="outline-secondary"
+              className="w-100 text-start"
             >
               Remove it from my order
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-2">Cancel this order</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Call me </Dropdown.Item>
+              <Dropdown.Item>Cancel this item</Dropdown.Item>
+              <Dropdown.Item>Call me</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>
       </Modal.Body>
-      <Modal.Footer className="d-flex justify-content-between align-items-center w-100">
-        {/* quantity button  */}
-        <div className="qty-btns d-flex align-items-center gap-2">
-          <Button
-            variant="outline-secondary"
-            className="inc-btn"
-            size="sm"
-            onClick={decrease}
-          >
+
+      <Modal.Footer className="d-flex justify-content-between">
+        {/* Quantity controls */}
+        <div className="d-flex align-items-center">
+          <Button variant="outline-secondary" onClick={decrease}>
             –
           </Button>
-          <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
-            {quantity}
-          </span>
-          <Button
-            variant="outline-secondary"
-            size="sm"
-            className="inc-btn"
-            onClick={increase}
-          >
+          <span className="mx-3 fw-bold fs-5">{quantity}</span>
+          <Button variant="outline-secondary" onClick={increase}>
             +
           </Button>
         </div>
+
+        {/* Action buttons */}
         <div className="d-flex gap-2">
-          <Button variant="warning" onClick={onClose}>
+          <Button variant="secondary" onClick={onClose}>
             Close
           </Button>
-          <Button variant="primary">
-            {/* onClick={handlViewCart} */}
+          <Button variant="primary" onClick={handleViewCart}>
             Add to Cart
           </Button>
         </div>
-
-        {/* Right side: Quantity buttons */}
       </Modal.Footer>
     </Modal>
   );
