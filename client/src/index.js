@@ -33,6 +33,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         {/* Route for the HomePage */}
         <Route path="/searchpage" element={<SearchPage />} />

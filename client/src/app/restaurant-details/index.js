@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import { IoStarSharp } from "react-icons/io5";
 import { FaTruck } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -11,6 +12,7 @@ import Footer from "../../components/footer";
 import { useState } from "react";
 import FoodModal from "../../components/modal";
 import Navbar from "../../components/navbar2";
+import CartSidebar from "../../components/cart-sidebar";
 
 const foodList = [
   {
@@ -41,6 +43,13 @@ function RestaurantDetails() {
   const handleFoodClick = (food) => {
     setSelectedFood(food);
     setShowModal(true);
+  };
+
+  // maaz
+
+  const [openCart, setOpenCart] = useState(false);
+  const handleCartClick = () => {
+    setOpenCart(true);
   };
   return (
     <>
@@ -252,6 +261,7 @@ function RestaurantDetails() {
             </div>
           </div>
         </div>
+
         <div className="row">
           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
             <div class="card mb-3" onClick={handleFoodClick}>
@@ -292,6 +302,13 @@ function RestaurantDetails() {
             </div>
           </div>
         </div>
+
+        <div className="bg-gray-400 absolute w-100">
+          <button className="btn btn-warning w-100" onClick={handleCartClick}>
+            cart
+          </button>
+        </div>
+
         {/* end of new style */}
 
         <FoodModal
@@ -299,10 +316,14 @@ function RestaurantDetails() {
           onClose={() => setShowModal(false)}
           food={selectedFood}
         />
+
+        <CartSidebar
+          show={openCart} 
+          onClose={() => setOpenCart(false)} />
       </div>
       <div className="container mt-5">
         <Footer />
-      </div>
+      </div>  
     </>
   );
 }

@@ -1,57 +1,11 @@
-/* App.css or any custom CSS file */
-.login-pink-btn {
-  /* background-color: #c21760;   */
-  background-color: #f8971d;
-  color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-.login-pink-btn:hover {
-  background-color: #ffb962;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-.login-pink-btn:active {
-  background-color: #ffb962 !important; /* Keep original color */
-  color: white !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-  /* border: none !important;
-  outline: none !important; */
-}
-.btn-signup {
-  background-color: #f8971d; /* Pink */
-  /* background-color: #ff69b4; Pink */
-
-  color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-.btn-signup:hover {
-  /* background-color: #f8bbd0; */
-  background-color: #ffb962;
-}
-.btn-signup:active {
-  background-color: #ffb962 !important; /* Keep original color */
-  color: white !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-  /* border: none !important;
-  outline: none !important; */
-}
-.form-control:focus {
-  box-shadow: none;
-  outline: none;
-  border-color: inherit;
-  background-color: inherit;
-}
-.custom-input {
-  border: 1px solid #ffc300;
-}
-.custom-input:focus {
-  border: 1px solid #ffc300;
-  box-shadow: none;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* body {
-  background-color: #282932;
-} */
+.custom-login-dialog {
+  margin-top: 250px;
+  max-width: 400px;
+  height: auto;
+}
